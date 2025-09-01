@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://btrceayvxka1y" path="res://assets/textures/dirt256x256.png" id="4_54p8n"]
 [ext_resource type="PackedScene" uid="uid://cu8sxhbwx8es6" path="res://addons/ThirdPersonShooter/ui/GunHUD.tscn" id="6_3dxm6"]
 [ext_resource type="Script" uid="uid://cmgy6q26hxec" path="res://addons/ThirdPersonShooter/ui/GUI.gd" id="7_5vvyt"]
-[ext_resource type="Script" uid="uid://bjhndfs2qk583" path="res://scripts/ThirdPersonControllerEventBus.gd" id="7_lgr22"]
+[ext_resource type="Script" uid="uid://bjhndfs2qk583" path="res://addons/ThirdPersonShooter/scripts/ThirdPersonControllerEventBus.gd" id="7_lgr22"]
 [ext_resource type="Script" uid="uid://dyfxhxgpjuulb" path="res://addons/ThirdPersonShooter/weapons/WeaponDropContainer.gd" id="8_03owx"]
 [ext_resource type="FontFile" uid="uid://iq1865kgwkev" path="res://assets/Fonts/Bungee/Bungee-Regular.ttf" id="8_5vvyt"]
 [ext_resource type="PackedScene" uid="uid://b432p6oj3ys6v" path="res://addons/ThirdPersonShooter/weapons/WeaponDrop.tscn" id="8_trn2v"]

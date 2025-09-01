@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jmt4y8nkctho" path="res://assets/models/CombatPack.glb" id="2_jydkg"]
 [ext_resource type="PackedScene" uid="uid://e2bccij4j7ud" path="res://addons/ThirdPersonShooter/player/Controls.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://bp5ccnqevm4gf" path="res://addons/ThirdPersonShooter/weapons/scenes/Pistol_01.tscn" id="3_ofhxi"]
-[ext_resource type="Script" uid="uid://dmeiay0sx66sn" path="res://scripts/StateMachine.gd" id="4"]
+[ext_resource type="Script" uid="uid://dmeiay0sx66sn" path="res://addons/ThirdPersonShooter/scripts/StateMachine.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://dqevkfj7hwnx" path="res://addons/ThirdPersonShooter/weapons/scenes/Revolver_01.tscn" id="4_q6miu"]
 [ext_resource type="Script" uid="uid://b3od24fp72b1g" path="res://addons/ThirdPersonShooter/player/states/Stopped.gd" id="5"]
 [ext_resource type="Script" uid="uid://bb6jfvk1bb0es" path="res://addons/ThirdPersonShooter/player/states/Running.gd" id="6"]
