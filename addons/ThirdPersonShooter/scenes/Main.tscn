@@ -1,20 +1,20 @@
 [gd_scene load_steps=25 format=3 uid="uid://duugmnauemcc7"]
 
-[ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://addons/ThirdPersonShooter/player/Player.tscn" id="1"]
-[ext_resource type="Script" uid="uid://cn2j8ijo5la1w" path="res://MainScene.gd" id="1_20pc6"]
-[ext_resource type="Material" uid="uid://cb6br3g0cy6c1" path="res://addons/ThirdPersonShooter/assets/materials/Grass.tres" id="1_ugafu"]
-[ext_resource type="Material" uid="uid://c560kh0cq42t2" path="res://addons/ThirdPersonShooter/assets/materials/Concrete.tres" id="2_4xuie"]
-[ext_resource type="Material" uid="uid://cotjsbb4imdui" path="res://addons/ThirdPersonShooter/assets/materials/Wood.tres" id="3_tqk2n"]
-[ext_resource type="Texture2D" uid="uid://btrceayvxka1y" path="res://addons/ThirdPersonShooter/assets/textures/dirt256x256.png" id="4_54p8n"]
-[ext_resource type="PackedScene" uid="uid://cu8sxhbwx8es6" path="res://addons/ThirdPersonShooter/ui/GunHUD.tscn" id="6_3dxm6"]
-[ext_resource type="Script" uid="uid://cmgy6q26hxec" path="res://addons/ThirdPersonShooter/ui/GUI.gd" id="7_5vvyt"]
-[ext_resource type="Script" uid="uid://bjhndfs2qk583" path="res://addons/ThirdPersonShooter/scripts/ThirdPersonControllerEventBus.gd" id="7_lgr22"]
-[ext_resource type="Script" uid="uid://dyfxhxgpjuulb" path="res://addons/ThirdPersonShooter/weapons/WeaponDropContainer.gd" id="8_03owx"]
-[ext_resource type="FontFile" uid="uid://iq1865kgwkev" path="res://addons/ThirdPersonShooter/assets/fonts/Bungee/Bungee-Regular.ttf" id="8_5vvyt"]
-[ext_resource type="PackedScene" uid="uid://b432p6oj3ys6v" path="res://addons/ThirdPersonShooter/weapons/WeaponDrop.tscn" id="8_trn2v"]
-[ext_resource type="Script" uid="uid://vmrj2qeky63q" path="res://addons/ThirdPersonShooter/weapons/WeaponItem.gd" id="13_c2ibq"]
-[ext_resource type="Resource" uid="uid://b55xhpttah1lq" path="res://addons/ThirdPersonShooter/weapons/resources/revolver_weapon_resource.tres" id="14_j4qnp"]
-[ext_resource type="Resource" uid="uid://7iuj6150gurm" path="res://addons/ThirdPersonShooter/weapons/resources/glock_weapon_resource.tres" id="15_j4qnp"]
+[ext_resource type="Script" uid="uid://cn2j8ijo5la1w" path="res://addons/ThirdPersonShooter/scenes/MainScene.gd" id="1_bjdqv"]
+[ext_resource type="Script" uid="uid://bjhndfs2qk583" path="res://addons/ThirdPersonShooter/scripts/ThirdPersonControllerEventBus.gd" id="2_2y3qu"]
+[ext_resource type="Script" uid="uid://cmgy6q26hxec" path="res://addons/ThirdPersonShooter/ui/GUI.gd" id="3_1v1h5"]
+[ext_resource type="PackedScene" uid="uid://cu8sxhbwx8es6" path="res://addons/ThirdPersonShooter/ui/GunHUD.tscn" id="4_1aq7m"]
+[ext_resource type="FontFile" uid="uid://iq1865kgwkev" path="res://addons/ThirdPersonShooter/assets/fonts/Bungee/Bungee-Regular.ttf" id="5_leta7"]
+[ext_resource type="Material" uid="uid://cb6br3g0cy6c1" path="res://addons/ThirdPersonShooter/assets/materials/Grass.tres" id="6_6y413"]
+[ext_resource type="Material" uid="uid://c560kh0cq42t2" path="res://addons/ThirdPersonShooter/assets/materials/Concrete.tres" id="7_2s0pe"]
+[ext_resource type="Material" uid="uid://cotjsbb4imdui" path="res://addons/ThirdPersonShooter/assets/materials/Wood.tres" id="8_k4c55"]
+[ext_resource type="Texture2D" uid="uid://btrceayvxka1y" path="res://addons/ThirdPersonShooter/assets/textures/dirt256x256.png" id="9_tkhca"]
+[ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://addons/ThirdPersonShooter/player/Player.tscn" id="10_4c3a2"]
+[ext_resource type="Script" uid="uid://dyfxhxgpjuulb" path="res://addons/ThirdPersonShooter/weapons/WeaponDropContainer.gd" id="11_7i6tt"]
+[ext_resource type="PackedScene" uid="uid://b432p6oj3ys6v" path="res://addons/ThirdPersonShooter/weapons/WeaponDrop.tscn" id="12_o3pme"]
+[ext_resource type="Script" uid="uid://vmrj2qeky63q" path="res://addons/ThirdPersonShooter/weapons/WeaponItem.gd" id="13_i1nv6"]
+[ext_resource type="Resource" uid="uid://b55xhpttah1lq" path="res://addons/ThirdPersonShooter/weapons/resources/revolver_weapon_resource.tres" id="14_td5vm"]
+[ext_resource type="Resource" uid="uid://7iuj6150gurm" path="res://addons/ThirdPersonShooter/weapons/resources/glock_weapon_resource.tres" id="15_ik7l7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ukb2j"]
 
@@ -26,7 +26,7 @@ background_mode = 2
 sky = SubResource("1")
 
 [sub_resource type="StandardMaterial3D" id="5"]
-albedo_texture = ExtResource("4_54p8n")
+albedo_texture = ExtResource("9_tkhca")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41aqy"]
@@ -42,27 +42,27 @@ size = Vector3(25, 11, 19)
 size = Vector3(25.7228, 10, 17.671)
 
 [sub_resource type="Resource" id="Resource_fpfj3"]
-script = ExtResource("13_c2ibq")
+script = ExtResource("13_i1nv6")
 current_mag = 20
-weapon = ExtResource("14_j4qnp")
+weapon = ExtResource("14_td5vm")
 metadata/_custom_type_script = "uid://vmrj2qeky63q"
 
 [sub_resource type="Resource" id="Resource_sc1dx"]
-script = ExtResource("13_c2ibq")
+script = ExtResource("13_i1nv6")
 current_mag = 20
-weapon = ExtResource("15_j4qnp")
+weapon = ExtResource("15_ik7l7")
 metadata/_custom_type_script = "uid://vmrj2qeky63q"
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_20pc6")
+script = ExtResource("1_bjdqv")
 
 [node name="ThirdPersonControllerEventBus" type="Node" parent="."]
-script = ExtResource("7_lgr22")
+script = ExtResource("2_2y3qu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("7_5vvyt")
+script = ExtResource("3_1v1h5")
 
-[node name="GunHud" parent="CanvasLayer" instance=ExtResource("6_3dxm6")]
+[node name="GunHud" parent="CanvasLayer" instance=ExtResource("4_1aq7m")]
 
 [node name="PickWeaponButtonParent" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -81,7 +81,7 @@ grow_vertical = 0
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
-theme_override_fonts/font = ExtResource("8_5vvyt")
+theme_override_fonts/font = ExtResource("5_leta7")
 text = "Pick up"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -98,28 +98,28 @@ collision_mask = 2
 [node name="CSGMesh3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -6, 0)
 size = Vector3(100, 100, 12)
-material = ExtResource("1_ugafu")
+material = ExtResource("6_6y413")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 0)
 size = Vector3(20, 2, 32)
-material = ExtResource("2_4xuie")
+material = ExtResource("7_2s0pe")
 
 [node name="CSGBox2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 4, -12)
 size = Vector3(6, 4, 6)
-material = ExtResource("3_tqk2n")
+material = ExtResource("8_k4c55")
 
 [node name="CSGBox3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 4, -7)
 size = Vector3(6, 4, 6)
-material = ExtResource("3_tqk2n")
+material = ExtResource("8_k4c55")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 16)
 polygon = PackedVector2Array(0, 0, 0, 2, 3, 0)
 depth = 4.0
-material = ExtResource("2_4xuie")
+material = ExtResource("7_2s0pe")
 
 [node name="CSGBox4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -3.61853, -8.32862)
@@ -127,7 +127,7 @@ operation = 2
 size = Vector3(24, 10, 16)
 material = SubResource("5")
 
-[node name="Player" parent="." instance=ExtResource("1")]
+[node name="Player" parent="." instance=ExtResource("10_4c3a2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24706, 0, 4.67049)
 collision_mask = 5
 
@@ -144,13 +144,13 @@ skeleton = NodePath("../..")
 shape = SubResource("8")
 
 [node name="WeaponDropContainer" type="Node3D" parent="."]
-script = ExtResource("8_03owx")
+script = ExtResource("11_7i6tt")
 
-[node name="WeaponDrop" parent="WeaponDropContainer" instance=ExtResource("8_trn2v")]
+[node name="WeaponDrop" parent="WeaponDropContainer" instance=ExtResource("12_o3pme")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 weapon_item = SubResource("Resource_fpfj3")
 
-[node name="WeaponDrop2" parent="WeaponDropContainer" instance=ExtResource("8_trn2v")]
+[node name="WeaponDrop2" parent="WeaponDropContainer" instance=ExtResource("12_o3pme")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -11.4024)
 weapon_item = SubResource("Resource_sc1dx")
 auto_loot = true
