@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhvxoa8mmfs5x"]
 
 [ext_resource type="Script" uid="uid://cx23xsdijmds" path="res://addons/ThirdPersonShooter/weapons/WeaponSystem.gd" id="1_jfybe"]
-[ext_resource type="AudioStream" uid="uid://ba3thdevtcue3" path="res://assets/SFX/25-CC0-bang-sfx/bang_02.ogg" id="2_yb7su"]
-[ext_resource type="AudioStream" uid="uid://b0btugbrijpcl" path="res://assets/SFX/432139__maximbomba__pistolreloadsound.wav" id="3_gx8cs"]
+[ext_resource type="AudioStream" uid="uid://ba3thdevtcue3" path="res://addons/ThirdPersonShooter/assets/SFX/25-CC0-bang-sfx/bang_02.ogg" id="2_yb7su"]
+[ext_resource type="AudioStream" uid="uid://b0btugbrijpcl" path="res://addons/ThirdPersonShooter/assets/SFX/432139__maximbomba__pistolreloadsound.wav" id="3_gx8cs"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jfybe"]
 streams_count = 1

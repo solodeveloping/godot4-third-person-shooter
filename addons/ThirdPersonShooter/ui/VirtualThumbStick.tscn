@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dka7avqvntd24"]
 
-[ext_resource type="Texture2D" uid="uid://dnq4faiwishko" path="res://assets/thumb-stick-arrow.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://dm3insntsxs54" path="res://assets/thumb-stick-ring.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://b0rwacp1rjhtv" path="res://assets/joystick-reticle.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dnq4faiwishko" path="res://addons/ThirdPersonShooter/player/states/thumb-stick-arrow.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dm3insntsxs54" path="res://addons/ThirdPersonShooter/assets/thumb-stick-ring.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b0rwacp1rjhtv" path="res://addons/ThirdPersonShooter/assets/joystick-reticle.png" id="3"]
 [ext_resource type="Script" uid="uid://dplunno37doqw" path="res://addons/ThirdPersonShooter/ui/VirtualThumbStick.gd" id="4"]
 
 [node name="VirtualThumbStick" type="Control"]

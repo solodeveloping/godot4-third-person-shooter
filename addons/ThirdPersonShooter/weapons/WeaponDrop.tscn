@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b432p6oj3ys6v"]
 
 [ext_resource type="Script" uid="uid://ciohp2txik0ss" path="res://addons/ThirdPersonShooter/weapons/WeaponDrop.gd" id="1_igwye"]
-[ext_resource type="Shader" uid="uid://cpv02hsqsmavk" path="res://assets/Shaders/energy_field_shader.gdshader" id="2_kh4ej"]
+[ext_resource type="Shader" uid="uid://cpv02hsqsmavk" path="res://addons/ThirdPersonShooter/assets/shaders/energy_field_shader.gdshader" id="2_kh4ej"]
 [ext_resource type="PackedScene" uid="uid://bp5ccnqevm4gf" path="res://addons/ThirdPersonShooter/weapons/scenes/Pistol_01.tscn" id="3_y8jlg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6n6j4"]
