@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3eyas4wxh4y8"]
+
+[ext_resource type="Script" uid="uid://0rfmxjyxqstr" path="res://ui/CrosshairLine.gd" id="1_t7qxq"]
+
+[sub_resource type="Animation" id="Animation_wkfeg"]
+resource_name = "fire"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("base/Line2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.203063, 1),
+"update": 0,
+"values": [Vector2(40, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8v5qt"]
+_data = {
+&"fire": SubResource("Animation_wkfeg")
+}
+
+[node name="CrosshairLine" type="Node2D"]
+script = ExtResource("1_t7qxq")
+
+[node name="base" type="Node2D" parent="."]
+position = Vector2(15, 0)
+
+[node name="Line2D" type="Line2D" parent="base"]
+position = Vector2(40, 0)
+points = PackedVector2Array(0, 0, 10, 0)
+width = 6.0
+default_color = Color(0.192157, 0.458824, 1, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="base/Line2D"]
+points = PackedVector2Array(0, 0, 10, 0)
+width = 2.0
+default_color = Color(0.442198, 0.634527, 1, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8v5qt")
+}

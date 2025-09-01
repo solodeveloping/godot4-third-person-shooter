@@ -1,10 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://duugmnauemcc7"]
+[gd_scene load_steps=25 format=3 uid="uid://duugmnauemcc7"]
 
 [ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://player/Player.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cn2j8ijo5la1w" path="res://MainScene.gd" id="1_20pc6"]
 [ext_resource type="Material" uid="uid://cb6br3g0cy6c1" path="res://assets/materials/Grass.tres" id="1_ugafu"]
 [ext_resource type="Material" uid="uid://c560kh0cq42t2" path="res://assets/materials/Concrete.tres" id="2_4xuie"]
 [ext_resource type="Material" uid="uid://cotjsbb4imdui" path="res://assets/materials/Wood.tres" id="3_tqk2n"]
 [ext_resource type="Texture2D" uid="uid://btrceayvxka1y" path="res://assets/textures/dirt256x256.png" id="4_54p8n"]
+[ext_resource type="PackedScene" uid="uid://cu8sxhbwx8es6" path="res://ui/GunHUD.tscn" id="6_3dxm6"]
+[ext_resource type="Script" uid="uid://cmgy6q26hxec" path="res://ui/GUI.gd" id="7_5vvyt"]
+[ext_resource type="Script" uid="uid://bjhndfs2qk583" path="res://scripts/ThirdPersonControllerEventBus.gd" id="7_lgr22"]
+[ext_resource type="Script" uid="uid://dyfxhxgpjuulb" path="res://weapons/WeaponDropContainer.gd" id="8_03owx"]
+[ext_resource type="FontFile" uid="uid://iq1865kgwkev" path="res://assets/Fonts/Bungee/Bungee-Regular.ttf" id="8_5vvyt"]
+[ext_resource type="PackedScene" uid="uid://b432p6oj3ys6v" path="res://weapons/WeaponDrop.tscn" id="8_trn2v"]
+[ext_resource type="Script" uid="uid://vmrj2qeky63q" path="res://weapons/WeaponItem.gd" id="13_c2ibq"]
+[ext_resource type="Resource" uid="uid://b55xhpttah1lq" path="res://weapons/resources/revolver_weapon_resource.tres" id="14_j4qnp"]
+[ext_resource type="Resource" uid="uid://7iuj6150gurm" path="res://weapons/resources/glock_weapon_resource.tres" id="15_j4qnp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ukb2j"]
 
@@ -31,7 +41,48 @@ size = Vector3(25, 11, 19)
 [sub_resource type="BoxShape3D" id="8"]
 size = Vector3(25.7228, 10, 17.671)
 
+[sub_resource type="Resource" id="Resource_fpfj3"]
+script = ExtResource("13_c2ibq")
+current_mag = 20
+weapon = ExtResource("14_j4qnp")
+metadata/_custom_type_script = "uid://vmrj2qeky63q"
+
+[sub_resource type="Resource" id="Resource_sc1dx"]
+script = ExtResource("13_c2ibq")
+current_mag = 20
+weapon = ExtResource("15_j4qnp")
+metadata/_custom_type_script = "uid://vmrj2qeky63q"
+
 [node name="Main" type="Node3D"]
+script = ExtResource("1_20pc6")
+
+[node name="ThirdPersonControllerEventBus" type="Node" parent="."]
+script = ExtResource("7_lgr22")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("7_5vvyt")
+
+[node name="GunHud" parent="CanvasLayer" instance=ExtResource("6_3dxm6")]
+
+[node name="PickWeaponButtonParent" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PickupWeaponButton" type="Button" parent="CanvasLayer/PickWeaponButtonParent"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("8_5vvyt")
+text = "Pick up"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("2")
@@ -91,3 +142,19 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Water"]
 shape = SubResource("8")
+
+[node name="WeaponDropContainer" type="Node3D" parent="."]
+script = ExtResource("8_03owx")
+
+[node name="WeaponDrop" parent="WeaponDropContainer" instance=ExtResource("8_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+weapon_item = SubResource("Resource_fpfj3")
+
+[node name="WeaponDrop2" parent="WeaponDropContainer" instance=ExtResource("8_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -11.4024)
+weapon_item = SubResource("Resource_sc1dx")
+auto_loot = true
+
+[connection signal="button_up" from="CanvasLayer/PickWeaponButtonParent/PickupWeaponButton" to="." method="_on_pickup_weapon_button_button_up"]
+[connection signal="player_entered_weapon_drop" from="WeaponDropContainer" to="." method="_on_weapon_drop_container_player_entered_weapon_drop"]
+[connection signal="player_exited_weapon_drop" from="WeaponDropContainer" to="." method="_on_weapon_drop_container_player_exited_weapon_drop"]

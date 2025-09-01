@@ -16,6 +16,9 @@ signal movement_state_changed(new_state)
 @onready var water_surface_detector: Area3D = $WaterSurfaceDetector
 @onready var dash_timer: Timer = $DashTimer
 @onready var surge_timer: Timer = $SurgeTimer
+@onready var weapon_system = $WeaponSystem
+@onready var weapon_attachment_node: Node3D = $Skin/CombatPack/Armature/GeneralSkeleton/BoneAttachment3D/WeaponAttachmentNode
+
 
 var horizontal_velocity: Vector3 = Vector3.ZERO
 var y_velocity: float = 0
@@ -25,6 +28,8 @@ var move_rot: float = 0
 func _ready():
 	# watch for changes in the movement state
 	sm_movement.connect("transitioned", self._on_move_state_changed)
+	
+	weapon_system.setup()
 
 func _physics_process(delta):
 	# the real velocity is a combination of the horizontal and vertical velocities as determined by
@@ -56,3 +61,6 @@ func has_movement():
 	# the player is fully stopped only if both the movement vector and the velocity
 	# vectors are approximately zero. otherwise it means they have movement
 	return controls.get_movement_vector() != Vector2.ZERO || !velocity.is_equal_approx(Vector3.ZERO)
+
+func has_weapon():
+	return weapon_system.has_weapon()

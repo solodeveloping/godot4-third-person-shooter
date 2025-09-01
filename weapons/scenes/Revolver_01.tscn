@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqevkfj7hwnx"]
+
+[ext_resource type="PackedScene" uid="uid://b8gx0pl8pq6dc" path="res://assets/models/Survival Pack/GLB/Revolver_1.glb" id="1_wp5a6"]
+
+[node name="Revolver" type="Node3D"]
+
+[node name="Revolver_12" parent="." instance=ExtResource("1_wp5a6")]
+transform = Transform3D(8.74228e-09, 0.2, 3.01992e-08, 0.2, -8.74228e-09, 0, 1.32005e-15, 3.01992e-08, -0.2, 0.0127086, 0.0725158, 0.02)

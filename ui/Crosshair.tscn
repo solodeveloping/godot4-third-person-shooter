@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://j64en702kh2s"]
+
+[ext_resource type="Script" uid="uid://0uj8emeiijcx" path="res://ui/Crosshair.gd" id="1_4t0n6"]
+[ext_resource type="PackedScene" uid="uid://d3eyas4wxh4y8" path="res://ui/CrosshairLine.tscn" id="2_xgrah"]
+
+[node name="Crosshair" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_4t0n6")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-1, 0, 1, 0)
+width = 6.0
+default_color = Color(0.192157, 0.458824, 1, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="."]
+points = PackedVector2Array(-1, 0, 1, 0)
+width = 2.0
+default_color = Color(0.442198, 0.634527, 1, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="lines" type="Node2D" parent="Node2D"]
+
+[node name="CrosshairLine" parent="Node2D/lines" instance=ExtResource("2_xgrah")]
+
+[node name="CrosshairLine2" parent="Node2D/lines" instance=ExtResource("2_xgrah")]
+rotation = 1.5708
+
+[node name="CrosshairLine3" parent="Node2D/lines" instance=ExtResource("2_xgrah")]
+rotation = 3.14159
+
+[node name="CrosshairLine4" parent="Node2D/lines" instance=ExtResource("2_xgrah")]
+rotation = 4.71239

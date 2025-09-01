@@ -25,8 +25,8 @@ Before you submit your pull request, though, I would kindly ask you to revisit y
 
 Therefore, I would again kindly ask you to stick to the following stylistic choices:
 - Use `4 spaces` instead of tabs
-    - When you submit your PR, if it shows a lot more changes than what you thought there would be, this is most likely the cause as your editor might be changing the indentations in changed lines automatically
-    - To fix individual files or lines without changing your editor settings, you can simply select the lines with tabs instead of spaces, and hit `Ctrl+i` (`Cmd+i` on Mac) to convert the indetations to spaces
+	- When you submit your PR, if it shows a lot more changes than what you thought there would be, this is most likely the cause as your editor might be changing the indentations in changed lines automatically
+	- To fix individual files or lines without changing your editor settings, you can simply select the lines with tabs instead of spaces, and hit `Ctrl+i` (`Cmd+i` on Mac) to convert the indetations to spaces
 - Don't over-comment the code. Most of the existing code admittedly have a lot of comments but that wasn't a good decision
 - Name your variables, classes and files according to the [Naming Conventions](#Naming_Conventions)
 - Always add type hints to exported and/or public class/script fields even if it's obvious (e.g. `@export var move_speed: float = 1.0` instead of `@export var move_speed = 1.0`)

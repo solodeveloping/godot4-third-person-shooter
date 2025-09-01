@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="WeaponRes" load_steps=6 format=3 uid="uid://7iuj6150gurm"]
+
+[ext_resource type="Script" uid="uid://xm2dtvirbix5" path="res://weapons/WeaponRes.gd" id="1_llr0v"]
+[ext_resource type="Texture2D" uid="uid://lprugo48wkff" path="res://assets/icons/weapons/pistol-gun.svg" id="1_y77fr"]
+[ext_resource type="AudioStream" uid="uid://b0btugbrijpcl" path="res://assets/SFX/432139__maximbomba__pistolreloadsound.wav" id="2_wbqj1"]
+[ext_resource type="PackedScene" uid="uid://bp5ccnqevm4gf" path="res://weapons/scenes/Pistol_01.tscn" id="2_y77fr"]
+[ext_resource type="AudioStream" uid="uid://ba3thdevtcue3" path="res://assets/SFX/25-CC0-bang-sfx/bang_02.ogg" id="4_7exjx"]
+
+[resource]
+script = ExtResource("1_llr0v")
+scene = ExtResource("2_y77fr")
+icon = ExtResource("1_y77fr")
+shoot_sfx = ExtResource("4_7exjx")
+spread = 15.0
+movement_spread = 5.0
+aim_spread = -7.0
+crouch_spread = -5.0
+jump_spread = 10.0
+projectile_count = 1
+fire_rate = 6
+mag_size = 15
+reload_speed = 0.8
+reload_sfx = ExtResource("2_wbqj1")
+metadata/_custom_type_script = "uid://xm2dtvirbix5"

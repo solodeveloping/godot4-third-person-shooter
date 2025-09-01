@@ -21,6 +21,16 @@ var _is_touchscreen: bool = false
 var _is_swimming_up: bool = false
 var _is_swimming_down: bool = false
 var _is_surging: bool = false
+var _is_aiming: bool = false
+var _is_shooting: bool = false
+var _has_pressed_weapon_1: bool = false
+var _has_pressed_weapon_2: bool = false
+var _has_pressed_weapon_3: bool = false
+var _has_pressed_weapon_4: bool = false
+var _has_pressed_weapon_5: bool = false
+var _has_pressed_weapon_6: bool = false
+var _has_pressed_reload: bool = false
+var _has_pressed_pickup_loot: bool = false
 
 func _ready():
 	# wait until the parent node is ready
@@ -61,6 +71,16 @@ func _process(delta):
 	_is_swimming_up = Input.is_action_pressed("swim_up")
 	_is_swimming_down = Input.is_action_pressed("swim_down")
 	_is_surging = Input.is_action_pressed("surge")
+	_is_aiming = Input.is_action_pressed("aim")
+	_is_shooting = Input.is_action_pressed("fire")
+	_has_pressed_weapon_1 = Input.is_action_just_pressed("weapon_1")
+	_has_pressed_weapon_2 = Input.is_action_just_pressed("weapon_2")
+	_has_pressed_weapon_3 = Input.is_action_just_pressed("weapon_3")
+	_has_pressed_weapon_4 = Input.is_action_just_pressed("weapon_4")
+	_has_pressed_weapon_5 = Input.is_action_just_pressed("weapon_5")
+	_has_pressed_weapon_6 = Input.is_action_just_pressed("weapon_6")
+	_has_pressed_reload = Input.is_action_just_pressed("reload")
+	_has_pressed_pickup_loot = Input.is_action_just_pressed("pickup_loot")
 
 func _input(event):
 	# checked non-touchscreen devices toggle the mouse cursor's capture mode when the ui_cancel action is
@@ -122,3 +142,33 @@ func get_zoom_scale():
 func set_zoom_scale(zoom_scale):
 	_zoom_scale = zoom_scale
 	_mobile_controls.set_zoom_scale(zoom_scale)
+
+func is_aiming():
+	return _is_aiming
+
+func is_shooting():
+	return _is_shooting
+
+func has_pressed_weapon_1():
+	return _has_pressed_weapon_1
+	
+func has_pressed_weapon_2():
+	return _has_pressed_weapon_2
+	
+func has_pressed_weapon_3():
+	return _has_pressed_weapon_3
+	
+func has_pressed_weapon_4():
+	return _has_pressed_weapon_4
+	
+func has_pressed_weapon_5():
+	return _has_pressed_weapon_5
+
+func has_pressed_weapon_6():
+	return _has_pressed_weapon_6
+
+func has_pressed_reload():
+	return _has_pressed_reload
+
+func has_pressed_pickup_loot():
+	return _has_pressed_pickup_loot

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp5ccnqevm4gf"]
+
+[ext_resource type="PackedScene" uid="uid://dulf404fn6ory" path="res://assets/models/Survival Pack/GLB/Pistol_1.glb" id="1_wtydy"]
+
+[node name="Pistol1" type="Node3D"]
+
+[node name="Pistol_12" parent="." instance=ExtResource("1_wtydy")]
+transform = Transform3D(6.55671e-09, 0.15, -1.31134e-08, 0.15, -6.55671e-09, 0, -5.73206e-16, -1.31134e-08, -0.15, 0, 0.116365, 0.0203444)

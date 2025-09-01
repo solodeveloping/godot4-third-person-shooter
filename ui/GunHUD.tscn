@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu8sxhbwx8es6"]
+
+[ext_resource type="Texture2D" uid="uid://lprugo48wkff" path="res://assets/icons/weapons/pistol-gun.svg" id="1_4fl4l"]
+[ext_resource type="Script" uid="uid://vtxjien0rwk0" path="res://ui/GunHUD.gd" id="1_uy6ui"]
+[ext_resource type="FontFile" uid="uid://iq1865kgwkev" path="res://assets/Fonts/Bungee/Bungee-Regular.ttf" id="2_uy6ui"]
+
+[node name="GunHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uy6ui")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="WeaponIconTextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+texture = ExtResource("1_4fl4l")
+expand_mode = 5
+
+[node name="BulletCountContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CurrentAmmoLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/BulletCountContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_uy6ui")
+text = "40"
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/BulletCountContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_uy6ui")
+text = "/"
+
+[node name="AmmoBackupLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/BulletCountContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_uy6ui")
+text = "40"

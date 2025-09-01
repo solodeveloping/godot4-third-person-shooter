@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WeaponRes" load_steps=3 format=3 uid="uid://d36545jbyd7ws"]
+
+[ext_resource type="Texture2D" uid="uid://c6pqlshi4nphs" path="res://assets/icons/weapons/rock.svg" id="1_4h76f"]
+[ext_resource type="Script" uid="uid://xm2dtvirbix5" path="res://weapons/WeaponRes.gd" id="1_wdih7"]
+
+[resource]
+script = ExtResource("1_wdih7")
+icon = ExtResource("1_4h76f")
+is_hand_combat = true
+spread = 0.0
+movement_spread = 0.0
+aim_spread = 0.0
+crouch_spread = 0.0
+jump_spread = 0.0
+projectile_count = 1
+fire_rate = 0
+mag_size = 0
+reload_speed = 0.0
+metadata/_custom_type_script = "uid://xm2dtvirbix5"

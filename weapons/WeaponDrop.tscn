@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://b432p6oj3ys6v"]
+
+[ext_resource type="Script" uid="uid://ciohp2txik0ss" path="res://weapons/WeaponDrop.gd" id="1_igwye"]
+[ext_resource type="Shader" uid="uid://cpv02hsqsmavk" path="res://assets/Shaders/energy_field_shader.gdshader" id="2_kh4ej"]
+[ext_resource type="PackedScene" uid="uid://bp5ccnqevm4gf" path="res://weapons/scenes/Pistol_01.tscn" id="3_y8jlg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6n6j4"]
+render_priority = 0
+shader = ExtResource("2_kh4ej")
+shader_parameter/albedo = Color(0.65098, 0.0196078, 0.270588, 1)
+shader_parameter/emission_color = Color(1, 0.227451, 0.105882, 1)
+shader_parameter/emission_amount = 5.0
+shader_parameter/rim_steepness = 3.0
+shader_parameter/uv_scale = Vector3(0, 0, 0)
+shader_parameter/uv_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_2bbs6"]
+material = SubResource("ShaderMaterial_6n6j4")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_igwye"]
+radius = 0.6
+
+[node name="WeaponDrop" type="Node3D"]
+script = ExtResource("1_igwye")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_2bbs6")
+
+[node name="PivotNode" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="WeaponParentNode" type="Node3D" parent="PivotNode"]
+transform = Transform3D(-8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 2, 0.369896, -0.019986, 0)
+
+[node name="Pistol1" parent="PivotNode/WeaponParentNode" instance=ExtResource("3_y8jlg")]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_igwye")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
