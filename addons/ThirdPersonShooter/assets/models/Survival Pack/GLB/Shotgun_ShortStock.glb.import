@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bk7syf7wgvv5x"
-path="res://.godot/imported/Shotgun_ShortStock.glb-346b682a794f02336b95a7a58c9e78c5.scn"
+path="res://.godot/imported/Shotgun_ShortStock.glb-59ee8ae874718674311d4e899e337c10.scn"
 
 [deps]
 
-source_file="res://assets/models/Survival Pack/GLB/Shotgun_ShortStock.glb"
-dest_files=["res://.godot/imported/Shotgun_ShortStock.glb-346b682a794f02336b95a7a58c9e78c5.scn"]
+source_file="res://addons/ThirdPersonShooter/assets/models/Survival Pack/GLB/Shotgun_ShortStock.glb"
+dest_files=["res://.godot/imported/Shotgun_ShortStock.glb-59ee8ae874718674311d4e899e337c10.scn"]
 
 [params]
 

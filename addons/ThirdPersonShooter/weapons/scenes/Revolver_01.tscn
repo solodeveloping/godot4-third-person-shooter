@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqevkfj7hwnx"]
 
-[ext_resource type="PackedScene" uid="uid://b8gx0pl8pq6dc" path="res://assets/models/Survival Pack/GLB/Revolver_1.glb" id="1_wp5a6"]
+[ext_resource type="PackedScene" uid="uid://b8gx0pl8pq6dc" path="res://addons/ThirdPersonShooter/assets/models/Survival Pack/GLB/Revolver_1.glb" id="1_wp5a6"]
 
 [node name="Revolver" type="Node3D"]
 

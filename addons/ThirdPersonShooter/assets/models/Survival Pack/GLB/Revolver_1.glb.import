@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b8gx0pl8pq6dc"
-path="res://.godot/imported/Revolver_1.glb-2bfd85766a92dd41400e3af2a09baf07.scn"
+path="res://.godot/imported/Revolver_1.glb-61739990ed0079c735bc23e32628c2a7.scn"
 
 [deps]
 
-source_file="res://assets/models/Survival Pack/GLB/Revolver_1.glb"
-dest_files=["res://.godot/imported/Revolver_1.glb-2bfd85766a92dd41400e3af2a09baf07.scn"]
+source_file="res://addons/ThirdPersonShooter/assets/models/Survival Pack/GLB/Revolver_1.glb"
+dest_files=["res://.godot/imported/Revolver_1.glb-61739990ed0079c735bc23e32628c2a7.scn"]
 
 [params]
 

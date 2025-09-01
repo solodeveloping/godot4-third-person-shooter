@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://jmt4y8nkctho"
-path="res://.godot/imported/CombatPack.glb-d5e29610585702d427467a15675a0eff.scn"
+uid="uid://lqvy45imqdi6"
+path="res://.godot/imported/Axe.glb-0ee2c9865cdf814d832b95f8cea1755f.scn"
 
 [deps]
 
-source_file="res://assets/models/CombatPack.glb"
-dest_files=["res://.godot/imported/CombatPack.glb-d5e29610585702d427467a15675a0eff.scn"]
+source_file="res://addons/ThirdPersonShooter/assets/models/Survival Pack/GLB/Axe.glb"
+dest_files=["res://.godot/imported/Axe.glb-0ee2c9865cdf814d832b95f8cea1755f.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,12 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:Armature/Skeleton3D": {
-"retarget/bone_map": Resource("res://assets/Mixamo BoneMap.tres")
-}
-}
-}
-gltf/naming_version=0
+_subresources={}
+gltf/naming_version=1
 gltf/embedded_image_handling=1

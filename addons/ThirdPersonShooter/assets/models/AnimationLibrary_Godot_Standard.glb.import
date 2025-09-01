@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ccr6spussqlmx"
-path="res://.godot/imported/AnimationLibrary_Godot_Standard.glb-531abea01eadb197d79bdf8a0e66bdcf.scn"
+path="res://.godot/imported/AnimationLibrary_Godot_Standard.glb-5a3e5876b172a30224c76e6dd459148a.scn"
 
 [deps]
 
-source_file="res://assets/models/AnimationLibrary_Godot_Standard.glb"
-dest_files=["res://.godot/imported/AnimationLibrary_Godot_Standard.glb-531abea01eadb197d79bdf8a0e66bdcf.scn"]
+source_file="res://addons/ThirdPersonShooter/assets/models/AnimationLibrary_Godot_Standard.glb"
+dest_files=["res://.godot/imported/AnimationLibrary_Godot_Standard.glb-5a3e5876b172a30224c76e6dd459148a.scn"]
 
 [params]
 

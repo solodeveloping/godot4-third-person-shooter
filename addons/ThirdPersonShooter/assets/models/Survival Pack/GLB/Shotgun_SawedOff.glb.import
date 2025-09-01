@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bqyv8cd7v60ya"
-path="res://.godot/imported/Shotgun_1.glb-36b795734c77bbf5f024753d449bbb45.scn"
+uid="uid://dvanusc3raorq"
+path="res://.godot/imported/Shotgun_SawedOff.glb-1c6f819cebb1f6d195698629e48dc34a.scn"
 
 [deps]
 
-source_file="res://assets/models/Survival Pack/GLB/Shotgun_1.glb"
-dest_files=["res://.godot/imported/Shotgun_1.glb-36b795734c77bbf5f024753d449bbb45.scn"]
+source_file="res://addons/ThirdPersonShooter/assets/models/Survival Pack/GLB/Shotgun_SawedOff.glb"
+dest_files=["res://.godot/imported/Shotgun_SawedOff.glb-1c6f819cebb1f6d195698629e48dc34a.scn"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bp5ccnqevm4gf"]
 
-[ext_resource type="PackedScene" uid="uid://dulf404fn6ory" path="res://assets/models/Survival Pack/GLB/Pistol_1.glb" id="1_wtydy"]
+[ext_resource type="PackedScene" uid="uid://dulf404fn6ory" path="res://addons/ThirdPersonShooter/assets/models/Survival Pack/GLB/Pistol_1.glb" id="1_wtydy"]
 
 [node name="Pistol1" type="Node3D"]
 

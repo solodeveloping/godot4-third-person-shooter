@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dipynx74g4nx1" path="res://addons/ThirdPersonShooter/player/Player.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://c0wf2s4o07gm1" path="res://addons/ThirdPersonShooter/player/ControllableCamera.tscn" id="2"]
-[ext_resource type="PackedScene" uid="uid://jmt4y8nkctho" path="res://assets/models/CombatPack.glb" id="2_jydkg"]
+[ext_resource type="PackedScene" uid="uid://jmt4y8nkctho" path="res://addons/ThirdPersonShooter/assets/models/CombatPack.glb" id="2_jydkg"]
 [ext_resource type="PackedScene" uid="uid://e2bccij4j7ud" path="res://addons/ThirdPersonShooter/player/Controls.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://bp5ccnqevm4gf" path="res://addons/ThirdPersonShooter/weapons/scenes/Pistol_01.tscn" id="3_ofhxi"]
 [ext_resource type="Script" uid="uid://dmeiay0sx66sn" path="res://addons/ThirdPersonShooter/scripts/StateMachine.gd" id="4"]
