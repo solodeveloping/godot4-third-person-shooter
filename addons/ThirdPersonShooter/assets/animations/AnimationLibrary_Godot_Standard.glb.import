@@ -4,12 +4,12 @@ importer="animation_library"
 importer_version=1
 type="AnimationLibrary"
 uid="uid://c3hecrm0e18ag"
-path="res://.godot/imported/AnimationLibrary_Godot_Standard.glb-33004f7992f7e483e8297cc2284adec0.res"
+path="res://.godot/imported/AnimationLibrary_Godot_Standard.glb-0d7d1ea18d4445a1b61afd008cca560a.res"
 
 [deps]
 
-source_file="res://assets/animations/AnimationLibrary_Godot_Standard.glb"
-dest_files=["res://.godot/imported/AnimationLibrary_Godot_Standard.glb-33004f7992f7e483e8297cc2284adec0.res"]
+source_file="res://addons/ThirdPersonShooter/assets/animations/AnimationLibrary_Godot_Standard.glb"
+dest_files=["res://.godot/imported/AnimationLibrary_Godot_Standard.glb-0d7d1ea18d4445a1b61afd008cca560a.res"]
 
 [params]
 
