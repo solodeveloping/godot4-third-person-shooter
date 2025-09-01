@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0wf2s4o07gm1"]
 
 [ext_resource type="Script" uid="uid://bqptd1ix25sgs" path="res://addons/ThirdPersonShooter/player/ControllableCamera.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://j64en702kh2s" path="res://ui/Crosshair.tscn" id="2_elpw0"]
+[ext_resource type="PackedScene" uid="uid://j64en702kh2s" path="res://addons/ThirdPersonShooter/ui/Crosshair.tscn" id="2_elpw0"]
 
 [sub_resource type="BoxShape3D" id="1"]
 size = Vector3(2, 1, 1)

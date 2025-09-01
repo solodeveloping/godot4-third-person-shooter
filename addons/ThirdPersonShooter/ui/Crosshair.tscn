@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://j64en702kh2s"]
 
-[ext_resource type="Script" uid="uid://0uj8emeiijcx" path="res://ui/Crosshair.gd" id="1_4t0n6"]
-[ext_resource type="PackedScene" uid="uid://d3eyas4wxh4y8" path="res://ui/CrosshairLine.tscn" id="2_xgrah"]
+[ext_resource type="Script" uid="uid://0uj8emeiijcx" path="res://addons/ThirdPersonShooter/ui/Crosshair.gd" id="1_4t0n6"]
+[ext_resource type="PackedScene" uid="uid://d3eyas4wxh4y8" path="res://addons/ThirdPersonShooter/ui/CrosshairLine.tscn" id="2_xgrah"]
 
 [node name="Crosshair" type="Control"]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3eyas4wxh4y8"]
 
-[ext_resource type="Script" uid="uid://0rfmxjyxqstr" path="res://ui/CrosshairLine.gd" id="1_t7qxq"]
+[ext_resource type="Script" uid="uid://0rfmxjyxqstr" path="res://addons/ThirdPersonShooter/ui/CrosshairLine.gd" id="1_t7qxq"]
 
 [sub_resource type="Animation" id="Animation_wkfeg"]
 resource_name = "fire"

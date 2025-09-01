@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cu8sxhbwx8es6"]
 
 [ext_resource type="Texture2D" uid="uid://lprugo48wkff" path="res://assets/icons/weapons/pistol-gun.svg" id="1_4fl4l"]
-[ext_resource type="Script" uid="uid://vtxjien0rwk0" path="res://ui/GunHUD.gd" id="1_uy6ui"]
+[ext_resource type="Script" uid="uid://vtxjien0rwk0" path="res://addons/ThirdPersonShooter/ui/GunHUD.gd" id="1_uy6ui"]
 [ext_resource type="FontFile" uid="uid://iq1865kgwkev" path="res://assets/Fonts/Bungee/Bungee-Regular.ttf" id="2_uy6ui"]
 
 [node name="GunHud" type="Control"]
