@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponRes" load_steps=3 format=3 uid="uid://d36545jbyd7ws"]
 
 [ext_resource type="Texture2D" uid="uid://c6pqlshi4nphs" path="res://assets/icons/weapons/rock.svg" id="1_4h76f"]
-[ext_resource type="Script" uid="uid://xm2dtvirbix5" path="res://weapons/WeaponRes.gd" id="1_wdih7"]
+[ext_resource type="Script" uid="uid://xm2dtvirbix5" path="res://addons/ThirdPersonShooter/weapons/WeaponRes.gd" id="1_wdih7"]
 
 [resource]
 script = ExtResource("1_wdih7")

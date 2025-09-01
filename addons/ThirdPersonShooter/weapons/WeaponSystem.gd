@@ -1,9 +1,10 @@
 extends Node
 class_name WeaponSystem
 
-const SQUARE_BULLET_DECAL = preload("res://weapons/SquareBulletDecal.tscn")
+const SQUARE_BULLET_DECAL = preload("res://addons/ThirdPersonShooter/weapons/SquareBulletDecal.tscn")
 
-const HANDS_WEAPON_RESOURCE = preload("res://weapons/resources/hands_weapon_resource.tres")
+const HANDS_WEAPON_RESOURCE = preload("res://addons/ThirdPersonShooter/weapons/resources/hands_weapon_resource.tres")
+
 @export
 var controllable_camera: ControllableCamera
 

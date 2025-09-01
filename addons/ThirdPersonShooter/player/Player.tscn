@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://c0wf2s4o07gm1" path="res://addons/ThirdPersonShooter/player/ControllableCamera.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://jmt4y8nkctho" path="res://assets/models/CombatPack.glb" id="2_jydkg"]
 [ext_resource type="PackedScene" uid="uid://e2bccij4j7ud" path="res://addons/ThirdPersonShooter/player/Controls.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://bp5ccnqevm4gf" path="res://weapons/scenes/Pistol_01.tscn" id="3_ofhxi"]
+[ext_resource type="PackedScene" uid="uid://bp5ccnqevm4gf" path="res://addons/ThirdPersonShooter/weapons/scenes/Pistol_01.tscn" id="3_ofhxi"]
 [ext_resource type="Script" uid="uid://dmeiay0sx66sn" path="res://scripts/StateMachine.gd" id="4"]
-[ext_resource type="PackedScene" uid="uid://dqevkfj7hwnx" path="res://weapons/scenes/Revolver_01.tscn" id="4_q6miu"]
+[ext_resource type="PackedScene" uid="uid://dqevkfj7hwnx" path="res://addons/ThirdPersonShooter/weapons/scenes/Revolver_01.tscn" id="4_q6miu"]
 [ext_resource type="Script" uid="uid://b3od24fp72b1g" path="res://addons/ThirdPersonShooter/player/states/Stopped.gd" id="5"]
 [ext_resource type="Script" uid="uid://bb6jfvk1bb0es" path="res://addons/ThirdPersonShooter/player/states/Running.gd" id="6"]
 [ext_resource type="Script" uid="uid://bbrw6ci31cmr6" path="res://addons/ThirdPersonShooter/player/states/Jumping.gd" id="7"]
@@ -20,8 +20,8 @@
 [ext_resource type="Script" uid="uid://dukkkvrisldub" path="res://addons/ThirdPersonShooter/player/states/Underwater.gd" id="16"]
 [ext_resource type="Script" uid="uid://cobgg21wbpip8" path="res://addons/ThirdPersonShooter/player/states/Diving.gd" id="17"]
 [ext_resource type="Script" uid="uid://bicc414y2pe81" path="res://addons/ThirdPersonShooter/player/states/Surging.gd" id="18"]
-[ext_resource type="PackedScene" uid="uid://bhvxoa8mmfs5x" path="res://weapons/WeaponSystem.tscn" id="20_yu5hk"]
-[ext_resource type="Script" uid="uid://dcxnw5qeujmrg" path="res://weapons/InventorySystem.gd" id="22_mlfor"]
+[ext_resource type="PackedScene" uid="uid://bhvxoa8mmfs5x" path="res://addons/ThirdPersonShooter/weapons/WeaponSystem.tscn" id="20_yu5hk"]
+[ext_resource type="Script" uid="uid://dcxnw5qeujmrg" path="res://addons/ThirdPersonShooter/weapons/InventorySystem.gd" id="22_mlfor"]
 
 [sub_resource type="SphereShape3D" id="21"]
 
