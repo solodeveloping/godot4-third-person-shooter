@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://duugmnauemcc7"]
 
-[ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://player/Player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://addons/ThirdPersonShooter/player/Player.tscn" id="1"]
 [ext_resource type="Script" uid="uid://cn2j8ijo5la1w" path="res://MainScene.gd" id="1_20pc6"]
 [ext_resource type="Material" uid="uid://cb6br3g0cy6c1" path="res://assets/materials/Grass.tres" id="1_ugafu"]
 [ext_resource type="Material" uid="uid://c560kh0cq42t2" path="res://assets/materials/Concrete.tres" id="2_4xuie"]
