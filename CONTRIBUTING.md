@@ -1,24 +1,21 @@
 # Contribution Guide
+
 Thank you for your interest in contributing to this repository!
 
 You can use this guide to figure out how you can contribute, and what type of contributions are most welcome.
 
 ## What to Contribute
-Although this repository is not in active development and I don't have the capacity to maintain a collective development effort around it, pull requests addressing errors and compatibility issues are welcome!
 
-Please feel free to submit a pull request if it either:
-- Fixes a bug
-- Adds backwards compatibility with older Godot versions
-- Replaces the calls to older Godot APIs with calls that are up-to-date with the latest Godot APIs (e.g. replacing 4 `Input.get_action_strength()` and one `normalize()` call with a single `Input.get_vector()` call)
-- Objectively improves the look-and-feel (e.g. lerping blend positions in animations instead of setting fixed values)
+Feel free to contribute and to submit a pull request.
 
-Likewise, *please DON'T submit* a pull request if it either:
-- Adds new features (e.g. rolling, flying)
-- Adds an addon to the project
-- Refactors the code
-- Restructures the project
+If you are not sure if the PR will be accepted, create an issue first to discuss the content.
+
+We are notably looking for:
+- Animations (revolver loading, combat animations, etc)
+- SFX
 
 ## How to Contribute
+
 Now that you're here, I think it to assume that you have a fair grasp on how to use Git, how to use Godot, and how to write GDScript, and more importantly, you already have something that you'd like to work on. In fact, you've already probably written it.
 
 Before you submit your pull request, though, I would kindly ask you to revisit your code to make sure it matches the existing code stylistically. Code style is very subjective and everyone has their own preferences, so I think it's ultimately better to have a specific and rigorously maintained coding style for each project, than to have one that everyone agrees upon, or even let everyone contribute in their own style.
