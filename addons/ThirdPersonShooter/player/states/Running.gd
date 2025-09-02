@@ -22,17 +22,14 @@ func physics_process(delta):
 	
 	var speed = 0
 	if player.controls.is_aiming():
+		player.anim_tree.set("parameters/weapon_transition/transition_request", "Aiming")
 		player.anim_tree.set("parameters/weapon_blend/blend_amount", 1)
 		speed = walk_speed
 	else:
+		player.anim_tree.set("parameters/weapon_transition/transition_request", "NotAiming")
 		player.anim_tree.set("parameters/weapon_blend/blend_amount", 0)
 		
 		# set the player's horizontal velocity based checked the move or sprint speed
 		speed = sprint_speed if player.controls.is_sprinting() else move_speed
-	
-	if player.has_weapon():
-		player.anim_tree.set("parameters/weapon_transition/transition_request", "Armed")
-	else:
-		player.anim_tree.set("parameters/weapon_transition/transition_request", "Unarmed")
 	
 	set_horizontal_movement(speed, turn_speed, cam_follow_speed, acceleration, delta)
