@@ -44,6 +44,10 @@ func process(delta: float):
 			if Time.get_ticks_msec() >= out_of_line_of_sight_time:
 				state_machine.transition_to("FollowingPlayer")
 		return
+		
+	if dist_to_player >= enemy.def.attacking_range:
+		state_machine.transition_to("FollowingPlayer")
+		return
 	
 	if enemy.is_gun_facing_target():
 		if enemy.current_weapon.weapon.is_hand_combat == false:
