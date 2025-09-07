@@ -98,6 +98,7 @@ turn_speed = 1
 update_pathfinding_time = 0.5
 walking_dist = 10.0
 enable_walking_when_chasing_player = false
+walk_when_patrolling = true
 aggro_range = 10.0
 use_deaggro_dist = true
 deaggro_dist = 50.0

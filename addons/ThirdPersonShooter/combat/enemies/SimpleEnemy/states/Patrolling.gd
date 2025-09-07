@@ -17,6 +17,13 @@ func enter():
 	enemy._target_global_pos = node.global_position
 
 func physics_process(delta: float):
+	if enemy.target:
+		if enemy.def.use_aggro_fow:
+			if enemy.is_node_in_fow(enemy.def.aggro_fow_deg, enemy.target):
+				enemy.pre_aggro_global_pos = enemy.global_position
+				state_machine.transition_to("FollowingPlayer")
+				return
+	
 	enemy.try_move_to_target(delta, enemy._target_global_pos)
 	
 	if enemy.navigation_agent_3d.is_target_reached():

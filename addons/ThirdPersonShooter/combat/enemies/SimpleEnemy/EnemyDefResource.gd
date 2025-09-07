@@ -12,11 +12,15 @@ var walking_dist: float = 10
 @export
 var enable_walking_when_chasing_player: bool = false
 
+@export
+var walk_when_patrolling: bool = true
+
 @export var aggro_range: float = 10
 @export var use_deaggro_dist := true
 @export var deaggro_dist: float = 25
 @export var out_of_line_of_sight_follow_time_ms: int = 3000
 
+## If you don't use it, it will detect players in the back
 @export
 var use_aggro_fow: bool = true
 

@@ -115,7 +115,7 @@ func setup_current_weapon():
 func try_move_to_target(delta: float, target_global_pos: Vector3):
 	time += delta
 	if time > delta:
-		# FIXME : no need to update if its a node
+		# FIXME : no need to update if its a patrol node / static
 		time = 0
 		set_nagivation_target_pos(target_global_pos)
 
@@ -140,12 +140,16 @@ func try_move_to_target(delta: float, target_global_pos: Vector3):
 	)
 	
 	var speed = def.running_speed
-	if global_position.distance_to(target_global_pos) <= def.walking_dist:
-		if str(state_machine._state.name) == "FollowingPlayer":
-			if def.enable_walking_when_chasing_player == true:
+	if str(state_machine._state.name) != "Patrolling":
+		if global_position.distance_to(target_global_pos) <= def.walking_dist:
+			# FIXME : maybe refacto to order the behaviour from the other states ?
+			if str(state_machine._state.name) == "FollowingPlayer":
+				if def.enable_walking_when_chasing_player == true:
+					speed = def.walking_speed
+			else:
 				speed = def.walking_speed
-		else:
-			speed = def.walking_speed
+	elif def.walk_when_patrolling:
+		speed = def.walking_speed
 	
 	var anim_pos: float = animation_tree.get("parameters/walk_run_blend/blend_position")
 	anim_pos = lerpf(anim_pos, speed / def.running_speed, 4 * delta)
@@ -212,12 +216,19 @@ func _on_detection_area_3d_body_entered(body: Node3D) -> void:
 	
 	if def.use_aggro_fow:
 		if !is_node_in_fow(def.aggro_fow_deg, body):
-			if str(state_machine._state.name) == "Idle":
-				aggro_target(body)
+			# FIXME : better implementation than this
+			if str(state_machine._state.name) == "Idle" \
+				or  str(state_machine._state.name) == "Patrolling" \
+				or str(state_machine._state.name) == "ReturningToInitialPos":
+				target = body
+			elif str(state_machine._state.name) == "ReturningToInitialPos":
+				if !def.ignore_player_when_returning_to_initial_pos:
+					target = body
 			return
 	
 	if str(state_machine._state.name) == "ReturningToInitialPos":
 		if def.ignore_player_when_returning_to_initial_pos:
+			# Info : if we ignore player we do nothing
 			pass
 		else:
 			state_machine.transition_to("FollowingPlayer")
@@ -225,7 +236,7 @@ func _on_detection_area_3d_body_entered(body: Node3D) -> void:
 		state_machine.transition_to("FollowingPlayer")
 		
 	aggro_target(body)
-		
+
 func aggro_target(node: Node3D):
 	pre_aggro_global_pos = global_position
 	target = node

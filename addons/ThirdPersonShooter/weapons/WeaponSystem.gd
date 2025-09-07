@@ -381,9 +381,10 @@ func pickup_loot():
 	if current_weapon_drop == null:
 		return
 	
+	var inventory_initial_size = inventory.content.size()
 	var index = inventory.add_weapon_or_increase_ammo(current_weapon_drop.weapon_item)
 	if auto_equip_weapon_when_empty_handed:
-		if inventory.content.size() == 0:
+		if inventory_initial_size == 0:
 			switch_to_weapon(index)
 	
 	current_weapon_drop.queue_free()
