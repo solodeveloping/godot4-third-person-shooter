@@ -326,9 +326,11 @@ func _on_event_bus_send_damage_player(
 			if body_armor < 0:
 				health += body_armor
 				body_armor = 0
+				event_bus.send_current_health_changed.emit(health)
+			event_bus.send_current_body_armor_changed.emit(body_armor)
 		else:
 			health -= damage
-		event_bus.send_current_health_changed.emit(health)
+			event_bus.send_current_health_changed.emit(health)
 		
 		if health <= 0:
 			# TODO : implement this
