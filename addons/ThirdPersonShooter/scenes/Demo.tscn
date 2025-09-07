@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://duugmnauemcc7"]
+[gd_scene load_steps=46 format=3 uid="uid://duugmnauemcc7"]
 
 [ext_resource type="Script" uid="uid://cn2j8ijo5la1w" path="res://addons/ThirdPersonShooter/scenes/Demo.gd" id="1_m8y4b"]
 [ext_resource type="Script" uid="uid://bjhndfs2qk583" path="res://addons/ThirdPersonShooter/scripts/ThirdPersonControllerEventBus.gd" id="2_wruol"]
@@ -11,10 +11,26 @@
 [ext_resource type="Texture2D" uid="uid://btrceayvxka1y" path="res://addons/ThirdPersonShooter/assets/textures/dirt256x256.png" id="9_2afau"]
 [ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://addons/ThirdPersonShooter/player/Player.tscn" id="10_ywruv"]
 [ext_resource type="Script" uid="uid://dyfxhxgpjuulb" path="res://addons/ThirdPersonShooter/weapons/WeaponDropContainer.gd" id="11_akx6c"]
-[ext_resource type="PackedScene" uid="uid://b432p6oj3ys6v" path="res://addons/ThirdPersonShooter/weapons/WeaponDrop.tscn" id="12_aro26"]
+[ext_resource type="PackedScene" uid="uid://b432p6oj3ys6v" path="res://addons/ThirdPersonShooter/weapons/drops/CircleAuraWeaponDrop.tscn" id="12_aro26"]
+[ext_resource type="PackedScene" uid="uid://b2iigo65a223d" path="res://addons/ThirdPersonShooter/weapons/drops/LightBelowWeaponDrop.tscn" id="12_m0i57"]
 [ext_resource type="Script" uid="uid://vmrj2qeky63q" path="res://addons/ThirdPersonShooter/weapons/WeaponItem.gd" id="13_oq4ha"]
 [ext_resource type="Resource" uid="uid://b55xhpttah1lq" path="res://addons/ThirdPersonShooter/weapons/resources/revolver_weapon_resource.tres" id="14_ocpk5"]
 [ext_resource type="Resource" uid="uid://7iuj6150gurm" path="res://addons/ThirdPersonShooter/weapons/resources/glock_weapon_resource.tres" id="15_vuukf"]
+[ext_resource type="PackedScene" uid="uid://bb56jcpvaqllm" path="res://addons/ThirdPersonShooter/weapons/drops/StatDrop.tscn" id="16_ltu4o"]
+[ext_resource type="Script" uid="uid://dcw8r3s48bitx" path="res://addons/ThirdPersonShooter/weapons/StatDropContainer.gd" id="16_ujg1c"]
+[ext_resource type="Resource" uid="uid://djhgevjvvxtli" path="res://addons/ThirdPersonShooter/weapons/resources/stats_drops/body_armor_stat_drop_resource.tres" id="17_ujg1c"]
+[ext_resource type="PackedScene" uid="uid://duliaemt420ev" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/SimpleEnemy.tscn" id="18_ywruv"]
+[ext_resource type="Resource" uid="uid://bbubp8uk3gej6" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/resources/enemy_with_glock_resource.tres" id="19_akx6c"]
+[ext_resource type="Resource" uid="uid://3slkeyq4gh05" path="res://addons/ThirdPersonShooter/weapons/resources/stats_drops/bandages_stat_drop_resource.tres" id="19_fl061"]
+[ext_resource type="Resource" uid="uid://cskjgc85k6qhy" path="res://addons/ThirdPersonShooter/weapons/resources/axe_weapon_resource.tres" id="20_vuukf"]
+[ext_resource type="Resource" uid="uid://ct2lvf46obfh8" path="res://addons/ThirdPersonShooter/weapons/resources/stats_drops/first_aid_kit_stat_drop_resource.tres" id="20_vwh30"]
+[ext_resource type="Script" uid="uid://1h1c7g8lbx5g" path="res://addons/ThirdPersonShooter/weapons/InventoryResource.gd" id="21_h42xm"]
+[ext_resource type="PackedScene" uid="uid://wu2xkpi2cpcp" path="res://addons/ThirdPersonShooter/combat/scenes/Mannequin.tscn" id="21_vwh30"]
+[ext_resource type="Script" uid="uid://bh0xlcr50daei" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/EnemyDefResource.gd" id="22_m0i57"]
+[ext_resource type="Script" uid="uid://bujwqxcvdkfrw" path="res://addons/ThirdPersonShooter/combat/DamageIndicatorManager.gd" id="22_ncrfg"]
+[ext_resource type="Script" uid="uid://c6525yi57r5a" path="res://addons/ThirdPersonShooter/combat/BulletTrailManager.gd" id="23_2afau"]
+[ext_resource type="Script" uid="uid://b4fw4ecs70xad" path="res://addons/ThirdPersonShooter/weapons/WeaponVFXManager.gd" id="25_h42xm"]
+[ext_resource type="Script" uid="uid://ca6t8f4rocqnj" path="res://addons/ThirdPersonShooter/combat/patrolling/PatrolPath3D.gd" id="26_aro26"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ukb2j"]
 
@@ -24,10 +40,6 @@ sky_material = SubResource("ProceduralSkyMaterial_ukb2j")
 [sub_resource type="Environment" id="2"]
 background_mode = 2
 sky = SubResource("1")
-
-[sub_resource type="StandardMaterial3D" id="5"]
-albedo_texture = ExtResource("9_2afau")
-uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41aqy"]
 transparency = 1
@@ -52,6 +64,71 @@ script = ExtResource("13_oq4ha")
 current_mag = 20
 weapon = ExtResource("15_vuukf")
 metadata/_custom_type_script = "uid://vmrj2qeky63q"
+
+[sub_resource type="Resource" id="Resource_2bx3j"]
+script = ExtResource("13_oq4ha")
+current_mag = 0
+weapon = ExtResource("20_vuukf")
+metadata/_custom_type_script = "uid://vmrj2qeky63q"
+
+[sub_resource type="Resource" id="Resource_7m7fq"]
+script = ExtResource("13_oq4ha")
+current_mag = 20
+weapon = ExtResource("20_vuukf")
+metadata/_custom_type_script = "uid://vmrj2qeky63q"
+
+[sub_resource type="Resource" id="Resource_4miwc"]
+script = ExtResource("21_h42xm")
+infinite_bullets = true
+weapons_are_unique = true
+bullets_per_type = {
+0: 0,
+1: 0,
+2: 0,
+3: 0
+}
+content = Array[ExtResource("13_oq4ha")]([SubResource("Resource_7m7fq")])
+metadata/_custom_type_script = "uid://1h1c7g8lbx5g"
+
+[sub_resource type="Resource" id="Resource_tyf7u"]
+script = ExtResource("22_m0i57")
+walking_speed = 100
+running_speed = 250
+turn_speed = 1
+update_pathfinding_time = 0.5
+walking_dist = 10.0
+enable_walking_when_chasing_player = false
+aggro_range = 10.0
+use_deaggro_dist = true
+deaggro_dist = 50.0
+out_of_line_of_sight_follow_time_ms = 3000
+use_aggro_fow = true
+aggro_fow_deg = 70.0
+attacking_range = 20.0
+attacking_with_gun_fow = 10.0
+ignore_player_when_returning_to_initial_pos = true
+health = 100
+max_health = 150
+body_armor = 0
+max_body_armor = 100
+inventory = SubResource("Resource_4miwc")
+environment_collision_mask = 1
+player_collision_mask = 2
+player_and_env_collision_mask = 3
+gun_attack_rate_limit = 0.5
+gun_attack_rate_limit_enabled = true
+extra_volume_db_for_gunshots = 0.0
+metadata/_custom_type_script = "uid://bh0xlcr50daei"
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_akx6c"]
+vertices = PackedVector3Array(-49, 0.0199976, -14.25, -31, 0.0199976, -14.25, -31, 0.0199976, -16.25, -30.25, 0.0199976, -17, -28.25, 0.0199976, -49, -49, 0.0199976, -49, -28.25, 0.0199976, -17, -11.5, 0.0199976, -17, -11.5, 0.0199976, -49, -8.75, 0.0199976, -16.25, -8.75, 0.0199976, -14.5, 3, 0.0199976, -14.75, 3, 0.0199976, -16.5, -9.5, 0.0199976, -17, 3.75, 0.0199976, -17.25, 5, 0.0199976, -49, 5.25, 0.0199976, -17.25, 26.75, 0.0199976, -17.25, 27, 0.0199976, -49, 29, 0.0199976, -16.5, 29, 0.0199976, -14.5, 49, 0.0199976, -14.5, 28.25, 0.0199976, -17.25, 49, 0.0199976, -49, 5.25, -8.6, -15.25, 5.25, -8.6, -1.5, 27, -8.6, -1.5, 27, -8.6, -15.25, -8.5, 1.18, 15, -8.5, 1.18, 13, -10.25, 2.02, 13, -9.375, 1.68, 14, -9.375, 1.68, 13, -17, 2.02, -9.25, -19.75, 2.02, -9.5, -19.75, 2.02, -8.75, -11, 2.02, 12.25, -29, 2.02, 15.25, -9.96429, 2.02, 15.0179, -20.75, 2.02, -7.75, -17, 2.02, -3.5, -27.25, 2.02, -7.75, -28, 2.02, -8.5, -28, 2.02, -15, -29, 2.02, -15, -16.25, 2.02, -2.75, -11, 2.02, -2.75, -17, 2.02, -10.25, -16.25, 2.02, -11, -19.75, 2.02, -15, -11, 2.02, -11, -11, 2.02, -15, -28.75, 0.0199976, -14.75, -28.75, 0.0199976, -0.75, -11, 0.0199976, -0.75, -11, 0.0199976, -14.75, -8.75, 0.0199976, -1.75, 3, 0.0199976, -2, 29, 0.0199976, -2.25, 49, 0.0199976, -2.25, -49, 0.0199976, 14.5, -31, 0.0199976, 14.5, -26, 6.02, -14, -26, 6.02, -10, -22, 6.02, -10, -22, 6.02, -14, -15, 6.02, -9, -15, 6.02, -5, -11, 6.02, -5, -11, 6.02, -9, -7, 0.179998, 13, -7, 0.179998, 15, 4, 0.0199976, 0.5, -6.25, 0.0199976, 15.75, -6.25, 0.0199976, 16.5, 28.25, 0.0199976, 0.5, -6.5, 0.0199976, 11.5, 29, 0.0199976, -0.25, 3, 0.0199976, -0.5, -8.75, 0.0199976, 11, -7, 0.0199976, 11, -7, 0.0199976, 17.25, -8.5, 0.0199976, 17.25, -8.25, 0.0199976, 49, 49, 0.0199976, 49, -31, 0.0199976, 16.5, -30.25, 0.0199976, 17.25, -49, 0.0199976, 49, -29, 0.0199976, 49, -28.75, 0.0199976, 17.25)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 5), PackedInt32Array(3, 5, 4), PackedInt32Array(4, 6, 3), PackedInt32Array(4, 8, 6), PackedInt32Array(6, 8, 7), PackedInt32Array(12, 11, 9), PackedInt32Array(9, 11, 10), PackedInt32Array(13, 7, 14), PackedInt32Array(14, 7, 8), PackedInt32Array(14, 8, 15), PackedInt32Array(9, 13, 12), PackedInt32Array(12, 13, 14), PackedInt32Array(15, 16, 14), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(21, 20, 19), PackedInt32Array(19, 22, 21), PackedInt32Array(21, 22, 23), PackedInt32Array(23, 22, 18), PackedInt32Array(22, 17, 18), PackedInt32Array(27, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(30, 32, 31), PackedInt32Array(31, 32, 29), PackedInt32Array(31, 29, 28), PackedInt32Array(35, 34, 33), PackedInt32Array(28, 38, 31), PackedInt32Array(31, 38, 30), PackedInt32Array(30, 38, 36), PackedInt32Array(36, 38, 37), PackedInt32Array(35, 33, 39), PackedInt32Array(39, 33, 40), PackedInt32Array(37, 42, 41), PackedInt32Array(43, 42, 44), PackedInt32Array(44, 42, 37), PackedInt32Array(41, 39, 40), PackedInt32Array(40, 45, 41), PackedInt32Array(41, 45, 36), PackedInt32Array(41, 36, 37), PackedInt32Array(45, 46, 36), PackedInt32Array(47, 33, 34), PackedInt32Array(47, 34, 48), PackedInt32Array(48, 34, 49), PackedInt32Array(50, 48, 51), PackedInt32Array(51, 48, 49), PackedInt32Array(55, 54, 52), PackedInt32Array(52, 54, 53), PackedInt32Array(11, 57, 10), PackedInt32Array(10, 57, 56), PackedInt32Array(20, 21, 58), PackedInt32Array(58, 21, 59), PackedInt32Array(0, 1, 60), PackedInt32Array(60, 1, 61), PackedInt32Array(65, 64, 62), PackedInt32Array(62, 64, 63), PackedInt32Array(69, 68, 66), PackedInt32Array(66, 68, 67), PackedInt32Array(71, 28, 70), PackedInt32Array(70, 28, 29), PackedInt32Array(73, 72, 74), PackedInt32Array(74, 72, 75), PackedInt32Array(71, 70, 73), PackedInt32Array(73, 70, 76), PackedInt32Array(73, 76, 72), PackedInt32Array(77, 58, 59), PackedInt32Array(56, 57, 78), PackedInt32Array(80, 79, 56), PackedInt32Array(78, 72, 56), PackedInt32Array(56, 72, 80), PackedInt32Array(80, 72, 76), PackedInt32Array(83, 82, 81), PackedInt32Array(81, 74, 83), PackedInt32Array(83, 74, 75), PackedInt32Array(83, 75, 59), PackedInt32Array(83, 59, 84), PackedInt32Array(75, 77, 59), PackedInt32Array(60, 61, 85), PackedInt32Array(85, 86, 60), PackedInt32Array(60, 86, 87), PackedInt32Array(87, 86, 88), PackedInt32Array(86, 89, 88), PackedInt32Array(89, 82, 88), PackedInt32Array(88, 82, 83)]
+cell_height = 0.01
+agent_radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="5"]
+albedo_texture = ExtResource("9_2afau")
+uv1_triplanar = true
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_m8y4b")
@@ -91,45 +168,10 @@ environment = SubResource("2")
 transform = Transform3D(-0.652085, -0.491636, 0.57713, -0.0626096, 0.793559, 0.605263, -0.755556, 0.358549, -0.548249, 0, 2.70409, 0)
 shadow_enabled = true
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-use_collision = true
-collision_mask = 2
-
-[node name="CSGMesh3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -6, 0)
-size = Vector3(100, 100, 12)
-material = ExtResource("6_fl061")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 0)
-size = Vector3(20, 2, 32)
-material = ExtResource("7_vwh30")
-
-[node name="CSGBox2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 4, -12)
-size = Vector3(6, 4, 6)
-material = ExtResource("8_ncrfg")
-
-[node name="CSGBox3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 4, -7)
-size = Vector3(6, 4, 6)
-material = ExtResource("8_ncrfg")
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 16)
-polygon = PackedVector2Array(0, 0, 0, 2, 3, 0)
-depth = 4.0
-material = ExtResource("7_vwh30")
-
-[node name="CSGBox4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -3.61853, -8.32862)
-operation = 2
-size = Vector3(24, 10, 16)
-material = SubResource("5")
-
 [node name="Player" parent="." instance=ExtResource("10_ywruv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24706, 0, 4.67049)
 collision_mask = 5
+melee_collision_shape_size_multiplier = 5.0
 
 [node name="Water" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -5.8162, -8)
@@ -153,8 +195,111 @@ weapon_item = SubResource("Resource_fpfj3")
 [node name="WeaponDrop2" parent="WeaponDropContainer" instance=ExtResource("12_aro26")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -11.4024)
 weapon_item = SubResource("Resource_sc1dx")
-auto_loot = true
+
+[node name="WeaponDrop3" parent="WeaponDropContainer" instance=ExtResource("12_m0i57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, 4)
+weapon_item = SubResource("Resource_2bx3j")
+
+[node name="StatDropContainer" type="Node3D" parent="."]
+script = ExtResource("16_ujg1c")
+use_event_bus = true
+
+[node name="StatDrop" parent="StatDropContainer" instance=ExtResource("16_ltu4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6137, 6.71945, -6.04472)
+stats = ExtResource("17_ujg1c")
+
+[node name="StatDrop2" parent="StatDropContainer" instance=ExtResource("16_ltu4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6137, 2.62814, -14.8956)
+stats = ExtResource("19_fl061")
+
+[node name="StatDrop3" parent="StatDropContainer" instance=ExtResource("16_ltu4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5317, 2.69194, -6.04472)
+stats = ExtResource("20_vwh30")
+auto_loot = false
+
+[node name="EnemyContainer" type="Node3D" parent="."]
+
+[node name="Mannequin" parent="EnemyContainer" instance=ExtResource("21_vwh30")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.289, 0, -5)
+
+[node name="SimpleEnemy" parent="EnemyContainer" instance=ExtResource("18_ywruv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
+def = ExtResource("19_akx6c")
+
+[node name="SimpleEnemy2" parent="EnemyContainer" node_paths=PackedStringArray("patrol_path_3D") instance=ExtResource("18_ywruv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3924, 0, -5.40881)
+def = ExtResource("19_akx6c")
+patrol_path_3D = NodePath("../../PatrolPath3D_1")
+
+[node name="SimpleEnemy3" parent="EnemyContainer" instance=ExtResource("18_ywruv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0446, 2.07063, 2.47265)
+def = SubResource("Resource_tyf7u")
+
+[node name="DamageIndicatorManager" type="Node3D" parent="."]
+script = ExtResource("22_ncrfg")
+
+[node name="BulletTrailManager" type="Node3D" parent="."]
+script = ExtResource("23_2afau")
+
+[node name="WeaponVFXManager" type="Node3D" parent="."]
+script = ExtResource("25_h42xm")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_akx6c")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="NavigationRegion3D"]
+use_collision = true
+collision_mask = 2
+
+[node name="CSGMesh3D" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -6, 0)
+size = Vector3(100, 100, 12)
+material = ExtResource("6_fl061")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 0)
+size = Vector3(20, 2, 32)
+material = ExtResource("7_vwh30")
+
+[node name="CSGBox2" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 4, -12)
+size = Vector3(6, 4, 6)
+material = ExtResource("8_ncrfg")
+
+[node name="CSGBox3" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 4, -7)
+size = Vector3(6, 4, 6)
+material = ExtResource("8_ncrfg")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 16)
+polygon = PackedVector2Array(0, 0, 0, 2, 3, 0)
+depth = 4.0
+material = ExtResource("7_vwh30")
+
+[node name="CSGBox4" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -3.61853, -8.32862)
+operation = 2
+size = Vector3(24, 10, 16)
+material = SubResource("5")
+
+[node name="PatrolPath3D_1" type="Node3D" parent="."]
+script = ExtResource("26_aro26")
+
+[node name="Node3D" type="Node3D" parent="PatrolPath3D_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="Node3D2" type="Node3D" parent="PatrolPath3D_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -19.5126)
+
+[node name="Node3D3" type="Node3D" parent="PatrolPath3D_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.359621, 0, -19.5126)
+
+[node name="Node3D4" type="Node3D" parent="PatrolPath3D_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.359621, 0, 1.4321)
 
 [connection signal="button_up" from="CanvasLayer/PickWeaponButtonParent/PickupWeaponButton" to="." method="_on_pickup_weapon_button_button_up"]
 [connection signal="player_entered_weapon_drop" from="WeaponDropContainer" to="." method="_on_weapon_drop_container_player_entered_weapon_drop"]
 [connection signal="player_exited_weapon_drop" from="WeaponDropContainer" to="." method="_on_weapon_drop_container_player_exited_weapon_drop"]
+[connection signal="player_entered_stat_drop" from="StatDropContainer" to="." method="_on_stat_drop_container_player_entered_stat_drop"]
+[connection signal="player_exited_stat_drop" from="StatDropContainer" to="." method="_on_stat_drop_container_player_exited_stat_drop"]

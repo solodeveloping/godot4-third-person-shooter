@@ -3,6 +3,7 @@ class_name WeaponItem
 
 @export
 var current_mag: int
+
 @export
 var weapon: WeaponRes
 

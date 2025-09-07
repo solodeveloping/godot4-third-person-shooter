@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1q310dbl51o3"]
+
+[ext_resource type="PackedScene" uid="uid://drc7pws3lrinu" path="res://addons/ThirdPersonShooter/assets/models/Survival Pack/GLB/Bandages.glb" id="1_dy38m"]
+
+[node name="Bandages" type="Node3D"]
+
+[node name="Bandages2" parent="." instance=ExtResource("1_dy38m")]

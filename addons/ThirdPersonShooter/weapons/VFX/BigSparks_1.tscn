@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://n02fq4tbgtke"]
+
+[ext_resource type="Script" uid="uid://qk733ey7diq7" path="res://addons/ThirdPersonShooter/weapons/VFX/SparkVFX.gd" id="1_11o3b"]
+
+[sub_resource type="Curve" id="Curve_82eva"]
+_data = [Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.251462, 1), 0.0, 0.0, 0, 0, Vector2(0.783626, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_k1jud"]
+curve = SubResource("Curve_82eva")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5puxw"]
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 12.0
+initial_velocity_max = 14.0
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_k1jud")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4u0i"]
+albedo_color = Color(1, 0.560784, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.411765, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cko6e"]
+material = SubResource("StandardMaterial3D_n4u0i")
+top_radius = 0.05
+bottom_radius = 0.0
+height = 1.0
+
+[node name="Spark" type="Node3D"]
+script = ExtResource("1_11o3b")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_5puxw")
+draw_pass_1 = SubResource("CylinderMesh_cko6e")

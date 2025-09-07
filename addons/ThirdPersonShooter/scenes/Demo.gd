@@ -5,6 +5,11 @@ extends Node3D
 @onready var pick_weapon_button_parent: Control = $CanvasLayer/PickWeaponButtonParent
 
 var current_weapon_drop: WeaponDrop
+var current_stat_drop: StatDrop
+
+#@onready var path_3d: Path3D = $Path3D
+#@onready var path_follow_3d: PathFollow3D = $PathFollow3D
+
 
 func _ready() -> void:
 	pick_weapon_button_parent.hide()
@@ -30,3 +35,12 @@ func _on_weapon_drop_container_player_exited_weapon_drop(weapon_drop: WeaponDrop
 func _on_pickup_weapon_button_button_up() -> void:
 	# it cant happen because of the third person view
 	pass
+
+
+func _on_stat_drop_container_player_entered_stat_drop(stat_drop: StatDrop) -> void:
+	current_stat_drop = stat_drop
+	pick_weapon_button_parent.show()
+
+func _on_stat_drop_container_player_exited_stat_drop(stat_drop: StatDrop) -> void:
+	current_stat_drop = null
+	pick_weapon_button_parent.hide()

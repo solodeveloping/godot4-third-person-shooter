@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StatDropRes" load_steps=5 format=3 uid="uid://djhgevjvvxtli"]
+
+[ext_resource type="PackedScene" uid="uid://csoh2iwk6yhp6" path="res://addons/ThirdPersonShooter/weapons/scenes/BodyArmor.tscn" id="1_eqlj3"]
+[ext_resource type="Script" uid="uid://cyvyfkqacjph" path="res://addons/ThirdPersonShooter/weapons/StatDropRes.gd" id="1_iaeyh"]
+[ext_resource type="Script" uid="uid://whb60sdc2c6j" path="res://addons/ThirdPersonShooter/weapons/StatRes.gd" id="3_bdlii"]
+
+[sub_resource type="Resource" id="Resource_u28sv"]
+script = ExtResource("3_bdlii")
+health = 0
+body_armor = 100
+metadata/_custom_type_script = "uid://whb60sdc2c6j"
+
+[resource]
+script = ExtResource("1_iaeyh")
+scene = ExtResource("1_eqlj3")
+stats = SubResource("Resource_u28sv")
+metadata/_custom_type_script = "uid://cyvyfkqacjph"

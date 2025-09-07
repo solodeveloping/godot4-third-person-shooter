@@ -6,7 +6,7 @@ signal transitioned(state_path)
 
 @export var initial_state := NodePath()
 
-@onready var _state: State = get_node(initial_state)
+@onready var _state: State
 
 func _init():
 	# make sure the node is always in the "state_machine" group
@@ -38,6 +38,7 @@ func _physics_process(delta):
 func transition_to(state_path: NodePath):
 	# if there's no node at the specified path, don't do anything
 	if !has_node(state_path):
+		push_error("state '%s' not found" % state_path)
 		return
 
 	# get node at the given path
@@ -48,7 +49,8 @@ func transition_to(state_path: NodePath):
 		return
 
 	# exit the current state, set the current to the new state and enter it, and emit transitioned signal
-	_state.exit()
+	if _state:
+		_state.exit()
 	_state = new_state
 	new_state.enter()
 	emit_signal("transitioned", state_path)

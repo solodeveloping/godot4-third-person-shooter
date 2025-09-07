@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StatDropRes" load_steps=5 format=3 uid="uid://ct2lvf46obfh8"]
+
+[ext_resource type="Script" uid="uid://cyvyfkqacjph" path="res://addons/ThirdPersonShooter/weapons/StatDropRes.gd" id="1_ble3i"]
+[ext_resource type="PackedScene" uid="uid://dbx53hccodcdv" path="res://addons/ThirdPersonShooter/weapons/scenes/FirstAidKit.tscn" id="1_n3sdl"]
+[ext_resource type="Script" uid="uid://whb60sdc2c6j" path="res://addons/ThirdPersonShooter/weapons/StatRes.gd" id="3_ob5do"]
+
+[sub_resource type="Resource" id="Resource_a1l6b"]
+script = ExtResource("3_ob5do")
+health = 100
+body_armor = 0
+metadata/_custom_type_script = "uid://whb60sdc2c6j"
+
+[resource]
+script = ExtResource("1_ble3i")
+scene = ExtResource("1_n3sdl")
+stats = SubResource("Resource_a1l6b")
+metadata/_custom_type_script = "uid://cyvyfkqacjph"

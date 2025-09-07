@@ -22,7 +22,7 @@ var collision_mask: int
 var weapon_item: WeaponItem
 
 @export
-var auto_loot := false
+var auto_loot := true
 
 func _ready() -> void:
 	if override_physics == true:

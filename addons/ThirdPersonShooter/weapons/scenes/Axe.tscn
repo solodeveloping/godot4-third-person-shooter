@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://jptihyrvlxk6"]
+
+[ext_resource type="PackedScene" uid="uid://lqvy45imqdi6" path="res://addons/ThirdPersonShooter/assets/models/Survival Pack/GLB/Axe.glb" id="1_3cfkl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3cfkl"]
+radius = 0.15
+
+[node name="Axe" type="Node3D"]
+
+[node name="Axe2" parent="." instance=ExtResource("1_3cfkl")]
+transform = Transform3D(-8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, 0, 0, 0.2, 0.0856999, 0.0880104, 0.0228705)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 11
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456599, 0.155452, 0)
+shape = SubResource("SphereShape3D_3cfkl")

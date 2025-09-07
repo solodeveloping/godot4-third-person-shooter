@@ -21,15 +21,18 @@ func physics_process(delta):
 		state_machine.transition_to("InAir/Falling")
 	
 	var speed = 0
-	if player.controls.is_aiming():
+	if player.controls.is_aiming() and player.has_gun():
 		player.anim_tree.set("parameters/weapon_transition/transition_request", "Aiming")
 		player.anim_tree.set("parameters/weapon_blend/blend_amount", 1)
 		speed = walk_speed
 	else:
-		player.anim_tree.set("parameters/weapon_transition/transition_request", "NotAiming")
-		player.anim_tree.set("parameters/weapon_blend/blend_amount", 0)
-		
-		# set the player's horizontal velocity based checked the move or sprint speed
-		speed = sprint_speed if player.controls.is_sprinting() else move_speed
+		if player.has_melee_weapon() and player.is_attacking():
+			speed = 0
+		else:
+			player.anim_tree.set("parameters/weapon_transition/transition_request", "NotAiming")
+			player.anim_tree.set("parameters/weapon_blend/blend_amount", 0)
+			
+			# set the player's horizontal velocity based checked the move or sprint speed
+			speed = sprint_speed if player.controls.is_sprinting() else move_speed
 	
 	set_horizontal_movement(speed, turn_speed, cam_follow_speed, acceleration, delta)

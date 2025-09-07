@@ -5,6 +5,10 @@ class_name Player
 signal movement_state_changed(new_state)
 
 @export var max_slope_angle: float = 50
+@export var allow_jumping_during_melee_attack: bool = true
+
+@export var override_melee_collision_shape_size: bool = false
+@export var melee_collision_shape_size_multiplier: float = 1
 
 @onready var skin: Node3D = $Skin
 @onready var camera: ControllableCamera = $CamRoot/ControllableCamera
@@ -18,7 +22,10 @@ signal movement_state_changed(new_state)
 @onready var surge_timer: Timer = $SurgeTimer
 @onready var weapon_system = $WeaponSystem
 @onready var weapon_attachment_node: Node3D = $Skin/CombatPack/Armature/GeneralSkeleton/BoneAttachment3D/WeaponAttachmentNode
+@onready var chest_point: Node3D = $ChestPoint
 
+@onready var attack_audio_stream_player_3d: AudioStreamPlayer3D = $AttackAudioStreamPlayer3D
+@onready var reload_audio_stream_player_3d: AudioStreamPlayer3D = $ReloadAudioStreamPlayer3D
 
 var horizontal_velocity: Vector3 = Vector3.ZERO
 var y_velocity: float = 0
@@ -62,5 +69,14 @@ func has_movement():
 	# vectors are approximately zero. otherwise it means they have movement
 	return controls.get_movement_vector() != Vector2.ZERO || !velocity.is_equal_approx(Vector3.ZERO)
 
-func has_weapon():
+func has_weapon() -> bool:
 	return weapon_system.has_weapon()
+
+func has_gun() -> bool:
+	return weapon_system.has_gun()
+
+func is_attacking() -> bool:
+	return weapon_system.is_attacking()
+
+func has_melee_weapon() -> bool:
+	return weapon_system.has_melee_weapon()

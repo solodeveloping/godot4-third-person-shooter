@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfe1vkaafdkm8"]
+
+[ext_resource type="PackedScene" uid="uid://de3es7u61eqav" path="res://addons/ThirdPersonShooter/assets/models/Ultimate RPG Items Pack/Armor_Leather.glb" id="1_irk8c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5qfx"]
+albedo_color = Color(0.305882, 0.603922, 0.282353, 1)
+
+[node name="Armor_Leather2" instance=ExtResource("1_irk8c")]
+
+[node name="Armor_Leather" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_f5qfx")

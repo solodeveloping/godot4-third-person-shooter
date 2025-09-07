@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://wu2xkpi2cpcp"]
+
+[ext_resource type="Script" uid="uid://cl3kxg4jh08pu" path="res://addons/ThirdPersonShooter/combat/scenes/Mannequin.gd" id="1_4o7cx"]
+[ext_resource type="PackedScene" uid="uid://mxpao1kis5hs" path="res://addons/ThirdPersonShooter/assets/models/yellow_manequin.tscn" id="1_60wcg"]
+
+[node name="Mannequin" type="Node3D" groups=["enemy"]]
+script = ExtResource("1_4o7cx")
+
+[node name="AnimationLibrary_Godot_Standard" parent="." instance=ExtResource("1_60wcg")]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3027, 0)
+billboard = 1
+text = "Shoot it"
+font_size = 100

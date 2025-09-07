@@ -1,20 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhvxoa8mmfs5x"]
+[gd_scene load_steps=2 format=3 uid="uid://bhvxoa8mmfs5x"]
 
 [ext_resource type="Script" uid="uid://cx23xsdijmds" path="res://addons/ThirdPersonShooter/weapons/WeaponSystem.gd" id="1_jfybe"]
-[ext_resource type="AudioStream" uid="uid://ba3thdevtcue3" path="res://addons/ThirdPersonShooter/assets/SFX/25-CC0-bang-sfx/bang_02.ogg" id="2_yb7su"]
-[ext_resource type="AudioStream" uid="uid://b0btugbrijpcl" path="res://addons/ThirdPersonShooter/assets/SFX/432139__maximbomba__pistolreloadsound.wav" id="3_gx8cs"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jfybe"]
-streams_count = 1
-stream_0/stream = ExtResource("2_yb7su")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yb7su"]
-streams_count = 1
-stream_0/stream = ExtResource("2_yb7su")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2obnd"]
-streams_count = 1
-stream_0/stream = ExtResource("3_gx8cs")
 
 [node name="WeaponSystem" type="Node"]
 script = ExtResource("1_jfybe")
@@ -27,13 +13,5 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = SubResource("AudioStreamRandomizer_jfybe")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_yb7su")
-
-[node name="ReloadAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_2obnd")
-
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

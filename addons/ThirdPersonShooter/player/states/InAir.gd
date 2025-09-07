@@ -32,6 +32,7 @@ func process(delta):
 		state_machine.transition_to("InAir/Dashing")
 
 func physics_process(delta):
+	# FIXME : replace by variable
 	# set the in air blend position to player's vertical velocity divided by 50, the max. terminal velocity
 	player.anim_tree.set("parameters/InAir/blend_position", player.y_velocity / 50.0)
 

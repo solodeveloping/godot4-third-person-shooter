@@ -7,7 +7,11 @@ func enter():
 func process(delta):
 	# if the jump button is pressed, transition into the InAir/Jumping state immediately
 	if player.controls.is_jumping():
-		state_machine.transition_to("InAir/Jumping")
+		if player.has_melee_weapon() and player.is_attacking() and !player.allow_jumping_during_melee_attack:
+			# Info : we don't jump
+			pass
+		else:
+			state_machine.transition_to("InAir/Jumping")
 	elif player.controls.is_crouching():
 		# if the player is crouching, transition to the Crouching state, which will determine actual
 		# sub state (e.g. stopped or moving) checked its own
@@ -23,5 +27,6 @@ func process(delta):
 		state_machine.transition_to("OnGround/Stopped")
 
 func physics_process(delta):
+	# FIXME : replace by appropriate variable
 	# set the checked ground blend position to player's horizontal speed divided by 10, the running speed
 	player.anim_tree.set("parameters/OnGround/blend_position", player.horizontal_velocity.length() / 10.0)

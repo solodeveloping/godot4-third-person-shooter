@@ -21,4 +21,5 @@ func set_horizontal_movement(speed, turn_speed, cam_follow_speed, acceleration, 
 	# if the player has any amount of movement, lerp the player model's rotation towards the current
 	# movement direction based checked its angle towards the X+ axis checked the XZ plane
 	if move_dir != Vector2.ZERO:
+		# FIXME : is not doing this when equiped with a gun
 		player.skin.rotation.y = lerp_angle(player.skin.rotation.y, atan2(-direction.x, -direction.z), turn_speed * delta)

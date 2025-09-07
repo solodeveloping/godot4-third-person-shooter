@@ -16,5 +16,6 @@ func process(delta):
 		state_machine.transition_to("Crouching/Stopped")
 
 func physics_process(delta):
+	# FIXME : replace by variable
 	# set the crouching blend position to player's horizontal speed divided by 4, the crouched walking speed
 	player.anim_tree.set("parameters/Crouching/blend_position", player.horizontal_velocity.length() / 4.0)

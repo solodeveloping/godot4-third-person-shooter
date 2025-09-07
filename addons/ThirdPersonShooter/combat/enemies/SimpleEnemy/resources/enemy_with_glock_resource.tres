@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="EnemyDefResource" load_steps=7 format=3 uid="uid://bbubp8uk3gej6"]
+
+[ext_resource type="Script" uid="uid://bh0xlcr50daei" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/EnemyDefResource.gd" id="1_emrk5"]
+[ext_resource type="Script" uid="uid://vmrj2qeky63q" path="res://addons/ThirdPersonShooter/weapons/WeaponItem.gd" id="1_he2e5"]
+[ext_resource type="Resource" uid="uid://7iuj6150gurm" path="res://addons/ThirdPersonShooter/weapons/resources/glock_weapon_resource.tres" id="2_f3t48"]
+[ext_resource type="Script" uid="uid://1h1c7g8lbx5g" path="res://addons/ThirdPersonShooter/weapons/InventoryResource.gd" id="3_7hjiw"]
+
+[sub_resource type="Resource" id="Resource_7m7fq"]
+script = ExtResource("1_he2e5")
+current_mag = 20
+weapon = ExtResource("2_f3t48")
+metadata/_custom_type_script = "uid://vmrj2qeky63q"
+
+[sub_resource type="Resource" id="Resource_4miwc"]
+script = ExtResource("3_7hjiw")
+infinite_bullets = true
+weapons_are_unique = true
+bullets_per_type = {
+0: 0,
+1: 0,
+2: 0,
+3: 0
+}
+content = Array[ExtResource("1_he2e5")]([SubResource("Resource_7m7fq")])
+metadata/_custom_type_script = "uid://1h1c7g8lbx5g"
+
+[resource]
+script = ExtResource("1_emrk5")
+walking_speed = 100
+running_speed = 250
+turn_speed = 1
+update_pathfinding_time = 0.5
+walking_dist = 10.0
+enable_walking_when_chasing_player = false
+aggro_range = 10.0
+use_deaggro_dist = true
+deaggro_dist = 50.0
+out_of_line_of_sight_follow_time_ms = 3000
+use_aggro_fow = true
+aggro_fow_deg = 70.0
+attacking_range = 20.0
+attacking_with_gun_fow = 10.0
+ignore_player_when_returning_to_initial_pos = true
+health = 100
+max_health = 150
+body_armor = 0
+max_body_armor = 100
+inventory = SubResource("Resource_4miwc")
+environment_collision_mask = 1
+player_collision_mask = 2
+player_and_env_collision_mask = 3
+gun_attack_rate_limit = 0.5
+gun_attack_rate_limit_enabled = true
+extra_volume_db_for_gunshots = 0.0
+metadata/_custom_type_script = "uid://bh0xlcr50daei"

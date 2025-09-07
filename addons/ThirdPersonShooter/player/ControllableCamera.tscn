@@ -27,6 +27,8 @@ shape = SubResource("1")
 [node name="GunRaycast" type="RayCast3D" parent="GimbalH/GimbalV/Camera3D"]
 enabled = false
 target_position = Vector3(0, 0, -10)
+collision_mask = 9
+collide_with_areas = true
 
 [node name="DistantPointFront" type="Node3D" parent="GimbalH/GimbalV/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.099)

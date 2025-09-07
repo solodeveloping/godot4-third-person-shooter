@@ -29,6 +29,11 @@ window/size/height=768
 
 enabled=PackedStringArray("res://addons/ThirdPersonShooter/plugin.cfg")
 
+[global_group]
+
+enemy=""
+head=""
+
 [input]
 
 move_forward={
@@ -160,6 +165,7 @@ pointing/emulate_touch_from_mouse=true
 3d_physics/layer_1="environment"
 3d_physics/layer_2="player"
 3d_physics/layer_3="water"
+3d_physics/layer_4="enemy"
 
 [physics]
 

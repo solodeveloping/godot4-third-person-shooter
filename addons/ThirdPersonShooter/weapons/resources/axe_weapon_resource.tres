@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="WeaponRes" load_steps=5 format=3 uid="uid://cskjgc85k6qhy"]
+
+[ext_resource type="Texture2D" uid="uid://ija5pguwk5ft" path="res://addons/ThirdPersonShooter/assets/icons/weapons/hatchet.svg" id="1_0upc3"]
+[ext_resource type="Script" uid="uid://xm2dtvirbix5" path="res://addons/ThirdPersonShooter/weapons/WeaponRes.gd" id="1_4s1ei"]
+[ext_resource type="PackedScene" uid="uid://jptihyrvlxk6" path="res://addons/ThirdPersonShooter/weapons/scenes/Axe.tscn" id="2_in8hm"]
+[ext_resource type="AudioStream" uid="uid://bonmobkklq86h" path="res://addons/ThirdPersonShooter/assets/SFX/585256__lesaucisson__swoosh-2.mp3" id="4_in8hm"]
+
+[resource]
+script = ExtResource("1_4s1ei")
+scene = ExtResource("2_in8hm")
+icon = ExtResource("1_0upc3")
+is_hand_combat = false
+is_melee_weapon = true
+shoot_sfx = ExtResource("4_in8hm")
+shoot_sfx_volume = -10.0
+spread = 0.0
+movement_spread = 0.0
+aim_spread = 0.0
+crouch_spread = 0.0
+jump_spread = 0.0
+projectile_count = 1
+fire_rate = 0.8
+max_range = 100.0
+melee_attacking_range = 1.0
+melee_damage_is_physics_based = true
+mag_size = 0
+ammo_type = 0
+reload_speed = 0.0
+reload_sfx_volume = 0.0
+base_damage = 10
+metadata/_custom_type_script = "uid://xm2dtvirbix5"

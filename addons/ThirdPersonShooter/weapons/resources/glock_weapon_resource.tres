@@ -1,24 +1,43 @@
-[gd_resource type="Resource" script_class="WeaponRes" load_steps=6 format=3 uid="uid://7iuj6150gurm"]
+[gd_resource type="Resource" script_class="WeaponRes" load_steps=11 format=3 uid="uid://7iuj6150gurm"]
 
+[ext_resource type="PackedScene" uid="uid://dyjoqwoejdr4j" path="res://addons/ThirdPersonShooter/weapons/decals/SquareBulletDecal.tscn" id="1_3q4rx"]
 [ext_resource type="Script" uid="uid://xm2dtvirbix5" path="res://addons/ThirdPersonShooter/weapons/WeaponRes.gd" id="1_llr0v"]
+[ext_resource type="PackedScene" uid="uid://bgy3tkpt5u4pm" path="res://addons/ThirdPersonShooter/weapons/VFX/SmallBulletTrail.tscn" id="1_opvil"]
 [ext_resource type="Texture2D" uid="uid://lprugo48wkff" path="res://addons/ThirdPersonShooter/assets/icons/weapons/pistol-gun.svg" id="1_y77fr"]
+[ext_resource type="PackedScene" uid="uid://u4e16mc6hh2w" path="res://addons/ThirdPersonShooter/weapons/VFX/SmallSparks_1.tscn" id="2_1k8wo"]
 [ext_resource type="AudioStream" uid="uid://b0btugbrijpcl" path="res://addons/ThirdPersonShooter/assets/SFX/432139__maximbomba__pistolreloadsound.wav" id="2_wbqj1"]
 [ext_resource type="PackedScene" uid="uid://bp5ccnqevm4gf" path="res://addons/ThirdPersonShooter/weapons/scenes/Pistol_01.tscn" id="2_y77fr"]
-[ext_resource type="AudioStream" uid="uid://ba3thdevtcue3" path="res://addons/ThirdPersonShooter/assets/SFX/25-CC0-bang-sfx/bang_02.ogg" id="4_7exjx"]
+[ext_resource type="PackedScene" uid="uid://20gficlueujr" path="res://addons/ThirdPersonShooter/weapons/VFX/BloodSmallSparks_1.tscn" id="3_3q4rx"]
+[ext_resource type="PackedScene" uid="uid://4ul1uux46pke" path="res://addons/ThirdPersonShooter/weapons/VFX/SmallMuzzleFlash.tscn" id="3_7y8q6"]
+[ext_resource type="AudioStream" uid="uid://c5mfeppgdyluj" path="res://addons/ThirdPersonShooter/assets/SFX/25-CC0-bang-sfx/shot_01.ogg" id="7_opvil"]
 
 [resource]
 script = ExtResource("1_llr0v")
 scene = ExtResource("2_y77fr")
 icon = ExtResource("1_y77fr")
-shoot_sfx = ExtResource("4_7exjx")
+is_hand_combat = false
+is_melee_weapon = false
+shoot_sfx = ExtResource("7_opvil")
+shoot_sfx_volume = -10.0
 spread = 15.0
 movement_spread = 5.0
 aim_spread = -7.0
 crouch_spread = -5.0
 jump_spread = 10.0
 projectile_count = 1
-fire_rate = 6
+fire_rate = 6.0
+max_range = 100.0
+melee_attacking_range = 1.0
+melee_damage_is_physics_based = true
 mag_size = 15
+ammo_type = 0
 reload_speed = 0.8
 reload_sfx = ExtResource("2_wbqj1")
+reload_sfx_volume = -20.0
+base_damage = 10
+bullet_decal = ExtResource("1_3q4rx")
+muzzle_flash = ExtResource("3_7y8q6")
+bullet_trail = ExtResource("1_opvil")
+environment_impact_vfx = ExtResource("2_1k8wo")
+humanoid_impact_vfx = ExtResource("3_3q4rx")
 metadata/_custom_type_script = "uid://xm2dtvirbix5"

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbx53hccodcdv"]
+
+[ext_resource type="PackedScene" uid="uid://c8nx1821bn20t" path="res://addons/ThirdPersonShooter/assets/models/Survival Pack/GLB/FirstAidKit.glb" id="1_x5np6"]
+
+[node name="FirstAidKit" type="Node3D"]
+
+[node name="FirstAidKit2" parent="." instance=ExtResource("1_x5np6")]

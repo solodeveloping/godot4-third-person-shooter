@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b500qsratnmi2"]
+
+[ext_resource type="Script" uid="uid://ciohp2txik0ss" path="res://addons/ThirdPersonShooter/weapons/drops/WeaponDrop.gd" id="1_6w3x0"]
+[ext_resource type="PackedScene" uid="uid://bp5ccnqevm4gf" path="res://addons/ThirdPersonShooter/weapons/scenes/Pistol_01.tscn" id="3_hrvdl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_igwye"]
+radius = 0.6
+
+[node name="WeaponDrop" type="Node3D"]
+script = ExtResource("1_6w3x0")
+
+[node name="PivotNode" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="WeaponParentNode" type="Node3D" parent="PivotNode"]
+transform = Transform3D(-8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 2, 0.369896, -0.019986, 0)
+
+[node name="Pistol1" parent="PivotNode/WeaponParentNode" instance=ExtResource("3_hrvdl")]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_igwye")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
