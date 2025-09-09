@@ -48,7 +48,7 @@ func physics_process(delta):
 
 	# set the player's horizontal velocity based checked the air speed
 	set_horizontal_movement(air_speed, turn_speed, cam_follow_speed, air_acceleration, delta)
-
+	
 	# otherwise decrease the vertical velocity by gravity, clamp to the max terminal velocity we defined earlier
 	player.y_velocity = clamp(player.y_velocity - gravity, -max_terminal_velocity, max_terminal_velocity)
 

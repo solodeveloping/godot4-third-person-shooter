@@ -70,6 +70,7 @@ func _physics_process(delta):
 				continue
 		velocity += extra_force.force
 		if extra_force.cancel_gravity:
+			y_velocity = extra_force.force.y
 			velocity.y = extra_force.force.y
 	move_and_slide()
 
