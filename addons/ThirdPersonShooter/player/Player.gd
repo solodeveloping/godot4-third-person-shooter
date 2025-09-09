@@ -44,6 +44,8 @@ var vfx_dash: GPUParticles3D
 var vfx_surge: GPUParticles3D
 var weapon_attachment_node: Node3D
 
+var extra_forces: Array[ExtraForce] = []
+
 func _ready():
 	# watch for changes in the movement state
 	sm_movement.connect("transitioned", self._on_move_state_changed)
@@ -56,6 +58,19 @@ func _physics_process(delta):
 	# the real velocity is a combination of the horizontal and vertical velocities as determined by
 	# the movement state machine
 	velocity = Vector3(horizontal_velocity.x, y_velocity, horizontal_velocity.z)
+	var time = Time.get_ticks_msec()
+	for i in range(extra_forces.size() - 1, -1, -1):
+		var extra_force = extra_forces[i]
+		if time >= extra_force.apply_until_time_ms:
+			extra_forces.remove_at(i)
+			continue
+		if extra_force.stop_applying_force_on_floor and is_on_floor():
+			if time >= extra_force.stop_apply_force_on_floor_time_ms:
+				extra_forces.remove_at(i)
+				continue
+		velocity += extra_force.force
+		if extra_force.cancel_gravity:
+			velocity.y = extra_force.force.y
 	move_and_slide()
 
 func setup_model():
@@ -101,6 +116,21 @@ func _on_WaterSurfaceDetector_area_exited(area):
 func _on_move_state_changed(new_state):
 	# trigger the
 	emit_signal("movement_state_changed", new_state)
+	
+func add_extra_force(
+	force: Vector3,
+	duration_ms: int,
+	stop_applying_force_on_floor: bool,
+	stop_apply_force_on_floor_delay_ms: int,
+	cancel_gravity,
+):
+	var extra_force = ExtraForce.new()
+	extra_force.force = force
+	extra_force.apply_until_time_ms = Time.get_ticks_msec() + duration_ms
+	extra_force.stop_applying_force_on_floor = stop_applying_force_on_floor
+	extra_force.stop_apply_force_on_floor_time_ms = Time.get_ticks_msec() + stop_apply_force_on_floor_delay_ms
+	extra_force.cancel_gravity = cancel_gravity
+	extra_forces.push_back(extra_force)
 
 func has_movement():
 	# the player is fully stopped only if both the movement vector and the velocity

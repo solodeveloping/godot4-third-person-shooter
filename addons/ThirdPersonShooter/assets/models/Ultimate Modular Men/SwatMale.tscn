@@ -17407,7 +17407,7 @@ visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 libraries = {
-&"": SubResource("AnimationLibrary_tb4lm")
+&"AnimationLibrary_Godot_Standard": SubResource("AnimationLibrary_tb4lm")
 }
 
 [node name="Area3D" type="Area3D" parent="." index="2" node_paths=PackedStringArray("target_parent")]

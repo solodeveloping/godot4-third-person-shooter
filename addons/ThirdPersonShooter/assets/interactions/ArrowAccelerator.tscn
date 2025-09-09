@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjstneddcab32"]
+
+[ext_resource type="PackedScene" uid="uid://bd6knieaexaln" path="res://addons/ThirdPersonShooter/assets/models/miscelleanous/red_arrow_chevrons_wayfinding/red_arrow_chevrons_wayfinding.glb" id="1_hd5wt"]
+[ext_resource type="Script" uid="uid://d30hqkaw3qnnf" path="res://addons/ThirdPersonShooter/assets/interactions/Accelerator.gd" id="1_v23wb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v23wb"]
+size = Vector3(2.5, 1, 2.20459)
+
+[node name="ArrowAccelerator" type="Node3D"]
+script = ExtResource("1_v23wb")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_hd5wt")]
+transform = Transform3D(-4.37114e-10, 0.01, -4.37114e-10, 0, -4.37114e-10, -0.01, -0.01, -4.37114e-10, 1.91069e-17, 0, 1, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5, 0)
+collision_layer = 0
+collision_mask = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.094635, -0.390065, -0.09198)
+shape = SubResource("BoxShape3D_v23wb")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

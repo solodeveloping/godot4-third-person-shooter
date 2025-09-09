@@ -42,6 +42,8 @@ var muzzle_flash: Node3D
 
 var weapon_node: Node3D
 
+var state_before_falling: String
+
 var event_bus: ThirdPersonControllerEventBus
 
 func _ready() -> void:
@@ -72,6 +74,8 @@ func _ready() -> void:
 
 func setup_current_weapon():
 	if def.model:
+		for child in model_node.get_children():
+			model_node.remove_child(child)
 		model_node.rotation_degrees = def.rotation_for_model
 		var instance = def.model.instantiate()
 		model_node.add_child(instance)
@@ -122,6 +126,11 @@ func setup_current_weapon():
 				push_error("Area3D is not an Area3D")
 		else:
 			push_error("melee weapon does not have an Area3D")
+
+func _physics_process(delta: float) -> void:
+	if !is_on_floor() and str(state_machine._state.name) != "Falling":
+		state_before_falling = str(state_machine._state.name)
+		state_machine.transition_to("Falling")
 
 func try_move_to_target(delta: float, target_global_pos: Vector3):
 	time += delta

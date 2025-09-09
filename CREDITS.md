@@ -35,3 +35,7 @@ The muzzle flash uses a Kenney texture from his [Particle Pack](https://www.kenn
 The small muzzle flash and small bullet trail was inspired by the [Majikayo Games tutorial series](https://www.youtube.com/watch?v=vWHHXq8NAYw), the code is CC0 and available on [Github](https://github.com/majikayogames/SimpleFPSController).
 
 One of the swoosh SFX was made by [lesaucisson](https://freesound.org/people/lesaucisson/sounds/585256/), licensed under CC0.
+
+We are using Sketchfab assets:
+- "Car Arrow" (https://skfb.ly/oKSWF) by rkparjapati13 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+- "Red Arrow Chevrons Wayfinding" (https://skfb.ly/6AKuX) by ironandsilk is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).

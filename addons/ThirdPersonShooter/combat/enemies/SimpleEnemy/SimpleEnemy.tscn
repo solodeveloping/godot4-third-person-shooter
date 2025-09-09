@@ -1,34 +1,39 @@
-[gd_scene load_steps=31 format=3 uid="uid://duliaemt420ev"]
+[gd_scene load_steps=34 format=3 uid="uid://duliaemt420ev"]
 
 [ext_resource type="Script" uid="uid://c0os6vh70wvkt" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/SimpleEnemy.gd" id="1_a4i01"]
+[ext_resource type="PackedScene" uid="uid://46toydkkk7yo" path="res://addons/ThirdPersonShooter/assets/models/CombatPack.tscn" id="2_1qrpx"]
 [ext_resource type="Script" uid="uid://dmeiay0sx66sn" path="res://addons/ThirdPersonShooter/scripts/StateMachine.gd" id="3_v1i2y"]
 [ext_resource type="Script" uid="uid://56ge7xqkb6c6" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/states/Idle.gd" id="4_7xdyy"]
 [ext_resource type="Script" uid="uid://c3m6uq5mhs3fe" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/states/FollowingPlayer.gd" id="5_0bic5"]
 [ext_resource type="Script" uid="uid://b3tqqei288q7a" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/states/ReturningToInitialPos.gd" id="6_rwxpa"]
 [ext_resource type="Script" uid="uid://dijfl5bsg3n53" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/states/Attacking.gd" id="7_rwxpa"]
 [ext_resource type="Script" uid="uid://cbspinypdjtks" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/states/JoiningPatrol.gd" id="7_v62ok"]
+[ext_resource type="Script" uid="uid://bl2rsy850ap65" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/states/Falling.gd" id="9_nu45i"]
 [ext_resource type="Script" uid="uid://ciofugre313re" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/states/Patrolling.gd" id="9_v62ok"]
 [ext_resource type="AudioStream" uid="uid://c1qcu6w7x8qyo" path="res://addons/ThirdPersonShooter/assets/SFX/25-CC0-bang-sfx/bang_01.ogg" id="10_s8sks"]
 [ext_resource type="Script" uid="uid://dcxnw5qeujmrg" path="res://addons/ThirdPersonShooter/weapons/InventorySystem.gd" id="11_cwish"]
 [ext_resource type="AudioStream" uid="uid://b0btugbrijpcl" path="res://addons/ThirdPersonShooter/assets/SFX/432139__maximbomba__pistolreloadsound.wav" id="11_nu45i"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s8sks"]
-animation = &"Idle"
+animation = &"AnimationLibrary_Godot_Standard/Idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cwish"]
-animation = &"Pistol_Shoot"
+animation = &"AnimationLibrary_Godot_Standard/Pistol_Shoot"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nu45i"]
-animation = &"Pistol_Aim_Neutral"
+animation = &"AnimationLibrary_Godot_Standard/Pistol_Aim_Neutral"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1qrpx"]
-animation = &"Pistol_Reload"
+animation = &"AnimationLibrary_Godot_Standard/Pistol_Reload"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hpw6g"]
-animation = &"Sword_Attack"
+animation = &"AnimationLibrary_Godot_Standard/Sword_Attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cj7kg"]
+animation = &"unarmed-jump"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v62ok"]
-animation = &"Idle"
+animation = &"AnimationLibrary_Godot_Standard/Idle"
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_v62ok"]
 filter_enabled = true
@@ -51,6 +56,10 @@ input_2/name = "Aiming"
 input_2/auto_advance = false
 input_2/break_loop_at_end = false
 input_2/reset = true
+input_3/name = "Falling"
+input_3/auto_advance = false
+input_3/break_loop_at_end = false
+input_3/reset = true
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_1qrpx"]
 filter_enabled = true
@@ -59,10 +68,10 @@ filters = ["%GeneralSkeleton:Chest", "%GeneralSkeleton:Head", "%GeneralSkeleton:
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_cj7kg"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a4i01"]
-animation = &"Walk"
+animation = &"AnimationLibrary_Godot_Standard/Walk"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dhf3n"]
-animation = &"Sprint"
+animation = &"AnimationLibrary_Godot_Standard/Sprint"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_2d2ut"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_a4i01")
@@ -71,18 +80,21 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_dhf3n")
 blend_point_1/pos = 1.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_a4i01"]
+graph_offset = Vector2(-146.088, 35.2636)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_v62ok")
 nodes/Animation/position = Vector2(-360, 500)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_s8sks")
 "nodes/Animation 2/position" = Vector2(20, 280)
 "nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_cwish")
-"nodes/Animation 3/position" = Vector2(580, 520)
+"nodes/Animation 3/position" = Vector2(540, 500)
 "nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_nu45i")
-"nodes/Animation 4/position" = Vector2(-320, 720)
+"nodes/Animation 4/position" = Vector2(-400, 720)
 "nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_1qrpx")
-"nodes/Animation 5/position" = Vector2(860, 520)
+"nodes/Animation 5/position" = Vector2(800, 600)
 "nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_hpw6g")
 "nodes/Animation 6/position" = Vector2(1220, 540)
+"nodes/Animation 7/node" = SubResource("AnimationNodeAnimation_cj7kg")
+"nodes/Animation 7/position" = Vector2(260, 660)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_v62ok")
 nodes/Blend2/position = Vector2(68.0892, 573.967)
 nodes/ReloadGlock/node = SubResource("AnimationNodeBlend2_hpw6g")
@@ -96,7 +108,7 @@ nodes/SwordAttack/position = Vector2(1440, 200)
 nodes/output/position = Vector2(1700, 240)
 nodes/walk_run_blend/node = SubResource("AnimationNodeBlendSpace1D_2d2ut")
 nodes/walk_run_blend/position = Vector2(-200, 120)
-node_connections = [&"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 4", &"ReloadGlock", 0, &"Shoot", &"ReloadGlock", 1, &"Animation 5", &"RootState", 0, &"Animation 2", &"RootState", 1, &"walk_run_blend", &"RootState", 2, &"Blend2", &"Shoot", 0, &"RootState", &"Shoot", 1, &"Animation 3", &"SwordAttack", 0, &"ReloadGlock", &"SwordAttack", 1, &"Animation 6", &"output", 0, &"SwordAttack"]
+node_connections = [&"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 4", &"ReloadGlock", 0, &"Shoot", &"ReloadGlock", 1, &"Animation 5", &"RootState", 0, &"Animation 2", &"RootState", 1, &"walk_run_blend", &"RootState", 2, &"Blend2", &"RootState", 3, &"Animation 7", &"Shoot", 0, &"RootState", &"Shoot", 1, &"Animation 3", &"SwordAttack", 0, &"ReloadGlock", &"SwordAttack", 1, &"Animation 6", &"output", 0, &"SwordAttack"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dhf3n"]
 radius = 0.2
@@ -124,20 +136,94 @@ inventory = NodePath("InventorySystem")
 [node name="ModelNode" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
+[node name="CombatPack" parent="ModelNode" instance=ExtResource("2_1qrpx")]
+
+[node name="GeneralSkeleton" parent="ModelNode/CombatPack/Armature" index="0"]
+bones/0/position = Vector3(0.00294158, 0.946295, -0.0954931)
+bones/0/rotation = Quaternion(-0.0370867, -0.115934, -0.00433185, 0.992555)
+bones/1/rotation = Quaternion(0, 0, 0, 1)
+bones/2/rotation = Quaternion(0.0445312, 0.00010762, 0.000130974, 0.999008)
+bones/3/rotation = Quaternion(0.133164, 0.000321975, 0.000391874, 0.991094)
+bones/4/rotation = Quaternion(-0.0889231, -0.000214992, -0.000261645, 0.996038)
+bones/5/rotation = Quaternion(0.044756, 0.0953258, 0.0117891, 0.99437)
+bones/7/rotation = Quaternion(0.502236, 0.521471, 0.530902, -0.44042)
+bones/8/rotation = Quaternion(-0.0157171, 0.825207, -0.564529, 0.00966942)
+bones/9/rotation = Quaternion(0.156822, -0.687129, 0.166919, 0.689492)
+bones/10/rotation = Quaternion(0.0991302, 0.706866, 0.0629003, 0.697536)
+bones/11/rotation = Quaternion(0, 0, 0, 1)
+bones/12/rotation = Quaternion(-0.123819, 0.719523, 0.201835, 0.652853)
+bones/13/rotation = Quaternion(0.181807, 0.110124, 0.0600633, 0.975301)
+bones/14/rotation = Quaternion(0.59943, 0.273966, 0.194632, 0.726461)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(0, 0, 0, 1)
+bones/16/rotation = Quaternion(0.629597, -4.09782e-08, -4.61936e-06, 0.776922)
+bones/17/rotation = Quaternion(0.623342, 2.98023e-08, -4.26173e-06, 0.781949)
+bones/18/rotation = Quaternion(0.623341, -2.23517e-07, -4.47035e-06, 0.78195)
+bones/19/rotation = Quaternion(0, 0, 0, 1)
+bones/20/rotation = Quaternion(0.628894, -0.0297349, -4.47035e-06, 0.776922)
+bones/21/rotation = Quaternion(0.622733, -0.0275546, -4.41074e-06, 0.781949)
+bones/22/rotation = Quaternion(0.622668, -0.0289615, -4.47035e-06, 0.78195)
+bones/23/rotation = Quaternion(0, 0, 0, 1)
+bones/24/rotation = Quaternion(0.629198, -0.0224141, -4.20213e-06, 0.776922)
+bones/25/rotation = Quaternion(0.622947, -0.0221764, -4.32134e-06, 0.781949)
+bones/26/rotation = Quaternion(0.622898, -0.0235055, -4.50015e-06, 0.78195)
+bones/27/rotation = Quaternion(0, 0, 0, 1)
+bones/28/rotation = Quaternion(0.663001, -0.0445298, 0.0736942, 0.743651)
+bones/29/rotation = Quaternion(0.620366, -0.062294, 0.0155731, 0.78168)
+bones/30/rotation = Quaternion(0.621922, -0.0420518, -4.47035e-06, 0.78195)
+bones/31/rotation = Quaternion(0.554197, -0.471125, -0.477497, -0.492853)
+bones/32/rotation = Quaternion(0.0702422, 0.821513, -0.565763, -0.00969055)
+bones/33/rotation = Quaternion(0.288901, 0.553941, -0.209344, 0.752238)
+bones/34/rotation = Quaternion(0.12025, -0.699031, -0.0568901, 0.702609)
+bones/35/rotation = Quaternion(0, 0, 0, 1)
+bones/36/rotation = Quaternion(-0.123819, -0.719523, -0.201836, 0.652853)
+bones/37/rotation = Quaternion(0.181807, -0.110124, -0.0600633, 0.975301)
+bones/38/rotation = Quaternion(0.59943, -0.273965, -0.194632, 0.726461)
+bones/38/scale = Vector3(1, 1, 1)
+bones/39/rotation = Quaternion(0, 0, 0, 1)
+bones/40/rotation = Quaternion(0.629597, 3.72529e-08, 4.17233e-06, 0.776922)
+bones/41/rotation = Quaternion(0.623341, 1.82539e-07, 4.47035e-06, 0.78195)
+bones/42/rotation = Quaternion(0.623342, 1.00583e-07, 4.23193e-06, 0.78195)
+bones/43/rotation = Quaternion(0, 0, 0, 1)
+bones/44/rotation = Quaternion(0.628895, 0.0297348, 4.35114e-06, 0.776922)
+bones/45/rotation = Quaternion(0.622732, 0.0275545, 4.50015e-06, 0.78195)
+bones/46/rotation = Quaternion(0.622669, 0.0289614, 4.32134e-06, 0.781949)
+bones/47/rotation = Quaternion(0, 0, 0, 1)
+bones/48/rotation = Quaternion(0.629198, 0.0224138, 4.11272e-06, 0.776922)
+bones/49/rotation = Quaternion(0.622947, 0.0221762, 4.47035e-06, 0.78195)
+bones/50/rotation = Quaternion(0.622899, 0.0235053, 4.17232e-06, 0.781949)
+bones/51/rotation = Quaternion(0, 0, 0, 1)
+bones/52/rotation = Quaternion(0.663001, 0.04453, -0.0736939, 0.743651)
+bones/53/rotation = Quaternion(0.620366, 0.0622936, -0.0155729, 0.781679)
+bones/54/rotation = Quaternion(0.621922, 0.0420514, 4.47035e-06, 0.781949)
+bones/55/rotation = Quaternion(-0.000831269, 0.155458, 0.980667, -0.118848)
+bones/56/rotation = Quaternion(0.0211993, 0.974473, -0.194626, 0.109885)
+bones/57/rotation = Quaternion(-0.0960593, 0.714739, -0.692734, 0.00640007)
+bones/58/rotation = Quaternion(4.29237e-08, 1, 5.96046e-08, 2.56884e-08)
+bones/60/rotation = Quaternion(0.000967133, -0.075299, 0.987528, 0.13827)
+bones/61/rotation = Quaternion(-0.0527022, 0.92302, -0.144683, -0.352596)
+bones/62/rotation = Quaternion(0.171026, 0.620803, -0.76508, 0.00247226)
+bones/63/rotation = Quaternion(-8.19271e-08, 1, 2.98023e-08, -8.60224e-09)
+
+[node name="BoneAttachment3D" parent="ModelNode/CombatPack/Armature/GeneralSkeleton" index="2"]
+transform = Transform3D(0.0563675, -0.135714, 0.989143, 0.539318, -0.829602, -0.144558, 0.840214, 0.541611, 0.0264306, -0.277432, 0.876569, -0.224359)
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../ModelNode/CombatPack")
 tree_root = SubResource("AnimationNodeBlendTree_a4i01")
+anim_player = NodePath("../ModelNode/CombatPack/AnimationPlayer")
 parameters/Blend2/blend_amount = 1.0
 parameters/ReloadGlock/blend_amount = 0
 parameters/RootState/current_state = "Idle"
 parameters/RootState/transition_request = ""
-parameters/RootState/current_index = 0.028766
+parameters/RootState/current_index = 0
 parameters/Shoot/active = false
 parameters/Shoot/internal_active = false
 parameters/Shoot/request = 0
 parameters/SwordAttack/active = false
 parameters/SwordAttack/internal_active = false
 parameters/SwordAttack/request = 0
-parameters/walk_run_blend/blend_position = 0.028766
+parameters/walk_run_blend/blend_position = 0.00250626
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.760711, 0)
@@ -175,6 +261,9 @@ script = ExtResource("7_v62ok")
 [node name="Patrolling" type="Node" parent="StateMachine"]
 script = ExtResource("9_v62ok")
 
+[node name="Falling" type="Node" parent="StateMachine"]
+script = ExtResource("9_nu45i")
+
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
@@ -206,3 +295,5 @@ infinite_bullets = true
 [connection signal="body_entered" from="DetectionArea3D" to="." method="_on_detection_area_3d_body_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
+
+[editable path="ModelNode/CombatPack"]
