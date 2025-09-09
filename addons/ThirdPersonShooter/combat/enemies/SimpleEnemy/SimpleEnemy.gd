@@ -14,7 +14,9 @@ var current_weapon: WeaponItem
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
-@onready var weapon_node: Node3D = $AnimationLibrary_Godot_Standard/Rig/GeneralSkeleton/BoneAttachment3D2/WeaponNode
+#@onready var weapon_node: Node3D = $AnimationLibrary_Godot_Standard/Rig/GeneralSkeleton/BoneAttachment3D2/WeaponNode
+@onready var model_node: Node3D = $ModelNode
+
 
 @onready var state_machine: StateMachine = $StateMachine
 
@@ -37,6 +39,8 @@ var has_returned_to_pre_aggro_pos := false
 var is_reloading := false
 
 var muzzle_flash: Node3D
+
+var weapon_node: Node3D
 
 var event_bus: ThirdPersonControllerEventBus
 
@@ -67,6 +71,13 @@ func _ready() -> void:
 	gun_attack_rate_limiter_timer.wait_time = def.gun_attack_rate_limit
 
 func setup_current_weapon():
+	if def.model:
+		model_node.rotation_degrees = def.rotation_for_model
+		var instance = def.model.instantiate()
+		model_node.add_child(instance)
+		weapon_node = instance.get_node("%WeaponNode")
+		animation_tree.anim_player = instance.get_node("AnimationPlayer").get_path()
+	
 	for child in weapon_node.get_children():
 		weapon_node.remove_child(child)
 	

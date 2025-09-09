@@ -7,10 +7,6 @@ extends Node3D
 var current_weapon_drop: WeaponDrop
 var current_stat_drop: StatDrop
 
-#@onready var path_3d: Path3D = $Path3D
-#@onready var path_follow_3d: PathFollow3D = $PathFollow3D
-
-
 func _ready() -> void:
 	pick_weapon_button_parent.hide()
 

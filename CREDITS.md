@@ -15,7 +15,12 @@ Links to the original providers and credits:
 - [kevlar icon](https://game-icons.net/1x1/skoll/kevlar-vest.html)
 - [axe icon](https://game-icons.net/1x1/delapouite/hatchet.html)
 
-The animations, new model and weapons were provided by [quaternius.com](https://quaternius.com/) under the CC0 license.
+The animations were provided by [quaternius.com](https://quaternius.com/) under the CC0 license.
+
+We are also using various models made by [quaternius.com](https://quaternius.com/), provided under the CC0 licens:
+- [Ultimate Modular Men Pack](https://quaternius.com/packs/ultimatemodularcharacters.html)
+- [Survival Pack](https://quaternius.com/packs/survival.html)
+- [Universal Base Characters](https://quaternius.com/packs/universalbasecharacters.html)
 
 The energy field effect for the loots was provided by [godotshaders.com](https://godotshaders.com/shader/simple-energy-shield/) under the CC0 license.
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://duugmnauemcc7"]
+[gd_scene load_steps=49 format=3 uid="uid://duugmnauemcc7"]
 
 [ext_resource type="Script" uid="uid://cn2j8ijo5la1w" path="res://addons/ThirdPersonShooter/scenes/Demo.gd" id="1_m8y4b"]
 [ext_resource type="Script" uid="uid://bjhndfs2qk583" path="res://addons/ThirdPersonShooter/scripts/ThirdPersonControllerEventBus.gd" id="2_wruol"]
@@ -29,6 +29,8 @@
 [ext_resource type="Script" uid="uid://bh0xlcr50daei" path="res://addons/ThirdPersonShooter/combat/enemies/SimpleEnemy/EnemyDefResource.gd" id="22_m0i57"]
 [ext_resource type="Script" uid="uid://bujwqxcvdkfrw" path="res://addons/ThirdPersonShooter/combat/DamageIndicatorManager.gd" id="22_ncrfg"]
 [ext_resource type="Script" uid="uid://c6525yi57r5a" path="res://addons/ThirdPersonShooter/combat/BulletTrailManager.gd" id="23_2afau"]
+[ext_resource type="PackedScene" uid="uid://b1fbpjhi55s3" path="res://addons/ThirdPersonShooter/assets/models/Universal Base Characters[Standard]/Godot/SuperHeroMale.tscn" id="23_tyf7u"]
+[ext_resource type="PackedScene" uid="uid://c1jai5kejrgh5" path="res://addons/ThirdPersonShooter/assets/models/Ultimate Modular Men/SwatMale.tscn" id="25_2bx3j"]
 [ext_resource type="Script" uid="uid://b4fw4ecs70xad" path="res://addons/ThirdPersonShooter/weapons/WeaponVFXManager.gd" id="25_h42xm"]
 [ext_resource type="Script" uid="uid://ca6t8f4rocqnj" path="res://addons/ThirdPersonShooter/combat/patrolling/PatrolPath3D.gd" id="26_aro26"]
 
@@ -71,10 +73,10 @@ current_mag = 0
 weapon = ExtResource("20_vuukf")
 metadata/_custom_type_script = "uid://vmrj2qeky63q"
 
-[sub_resource type="Resource" id="Resource_7m7fq"]
+[sub_resource type="Resource" id="Resource_were0"]
 script = ExtResource("13_oq4ha")
 current_mag = 20
-weapon = ExtResource("20_vuukf")
+weapon = ExtResource("14_ocpk5")
 metadata/_custom_type_script = "uid://vmrj2qeky63q"
 
 [sub_resource type="Resource" id="Resource_4miwc"]
@@ -87,7 +89,7 @@ bullets_per_type = {
 2: 0,
 3: 0
 }
-content = Array[ExtResource("13_oq4ha")]([SubResource("Resource_7m7fq")])
+content = Array[ExtResource("13_oq4ha")]([SubResource("Resource_were0")])
 metadata/_custom_type_script = "uid://1h1c7g8lbx5g"
 
 [sub_resource type="Resource" id="Resource_tyf7u"]
@@ -96,6 +98,41 @@ walking_speed = 100
 running_speed = 250
 turn_speed = 1
 update_pathfinding_time = 0.5
+model = ExtResource("23_tyf7u")
+rotation_for_model = Vector3(0, 180, 0)
+walking_dist = 10.0
+enable_walking_when_chasing_player = false
+walk_when_patrolling = true
+aggro_range = 10.0
+use_deaggro_dist = true
+deaggro_dist = 50.0
+out_of_line_of_sight_follow_time_ms = 3000
+use_aggro_fow = true
+aggro_fow_deg = 70.0
+attacking_range = 20.0
+attacking_with_gun_fow = 10.0
+ignore_player_when_returning_to_initial_pos = true
+health = 100
+max_health = 150
+body_armor = 0
+max_body_armor = 100
+inventory = SubResource("Resource_4miwc")
+environment_collision_mask = 1
+player_collision_mask = 2
+player_and_env_collision_mask = 3
+gun_attack_rate_limit = 0.5
+gun_attack_rate_limit_enabled = true
+extra_volume_db_for_gunshots = 0.0
+metadata/_custom_type_script = "uid://bh0xlcr50daei"
+
+[sub_resource type="Resource" id="Resource_jc10l"]
+script = ExtResource("22_m0i57")
+walking_speed = 100
+running_speed = 250
+turn_speed = 1
+update_pathfinding_time = 0.5
+model = ExtResource("25_2bx3j")
+rotation_for_model = Vector3(0, 180, 0)
 walking_dist = 10.0
 enable_walking_when_chasing_player = false
 walk_when_patrolling = true
@@ -235,6 +272,10 @@ patrol_path_3D = NodePath("../../PatrolPath3D_1")
 [node name="SimpleEnemy3" parent="EnemyContainer" instance=ExtResource("18_ywruv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0446, 2.07063, 2.47265)
 def = SubResource("Resource_tyf7u")
+
+[node name="SimpleEnemy4" parent="EnemyContainer" instance=ExtResource("18_ywruv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0446, 2.07063, 11.4042)
+def = SubResource("Resource_jc10l")
 
 [node name="DamageIndicatorManager" type="Node3D" parent="."]
 script = ExtResource("22_ncrfg")

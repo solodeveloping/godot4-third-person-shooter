@@ -136,7 +136,7 @@ func shoot():
 			if collider is Node3D:
 				var _parent: Node3D
 				if collider is TakeDamage3D:
-					_parent = collider.target_parent
+					_parent = collider.target_parent.get_parent().get_parent()
 				else:
 					if collider.get_parent().get_parent() is Node3D:
 						_parent = collider.get_parent().get_parent()

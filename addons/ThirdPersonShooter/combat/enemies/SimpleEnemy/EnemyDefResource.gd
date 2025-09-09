@@ -7,6 +7,12 @@ class_name EnemyDefResource
 @export var update_pathfinding_time := 0.5
 
 @export
+var model: PackedScene
+
+@export
+var rotation_for_model := Vector3(0, 180, 0)
+
+@export
 var walking_dist: float = 10
 
 @export
