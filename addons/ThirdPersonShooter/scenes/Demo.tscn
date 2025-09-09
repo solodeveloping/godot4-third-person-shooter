@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://duugmnauemcc7"]
+[gd_scene load_steps=50 format=3 uid="uid://duugmnauemcc7"]
 
 [ext_resource type="Script" uid="uid://cn2j8ijo5la1w" path="res://addons/ThirdPersonShooter/scenes/Demo.gd" id="1_m8y4b"]
 [ext_resource type="Script" uid="uid://bjhndfs2qk583" path="res://addons/ThirdPersonShooter/scripts/ThirdPersonControllerEventBus.gd" id="2_wruol"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://iq1865kgwkev" path="res://addons/ThirdPersonShooter/assets/fonts/Bungee/Bungee-Regular.ttf" id="5_i6ef7"]
 [ext_resource type="Material" uid="uid://cb6br3g0cy6c1" path="res://addons/ThirdPersonShooter/assets/materials/Grass.tres" id="6_fl061"]
 [ext_resource type="Material" uid="uid://c560kh0cq42t2" path="res://addons/ThirdPersonShooter/assets/materials/Concrete.tres" id="7_vwh30"]
+[ext_resource type="PackedScene" uid="uid://46toydkkk7yo" path="res://addons/ThirdPersonShooter/assets/models/CombatPack.tscn" id="7_were0"]
 [ext_resource type="Material" uid="uid://cotjsbb4imdui" path="res://addons/ThirdPersonShooter/assets/materials/Wood.tres" id="8_ncrfg"]
 [ext_resource type="Texture2D" uid="uid://btrceayvxka1y" path="res://addons/ThirdPersonShooter/assets/textures/dirt256x256.png" id="9_2afau"]
 [ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://addons/ThirdPersonShooter/player/Player.tscn" id="10_ywruv"]
@@ -210,6 +211,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24706, 0, 4.67049)
 collision_mask = 5
 melee_collision_shape_size_multiplier = 5.0
+model = ExtResource("7_were0")
 
 [node name="Water" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -5.8162, -8)

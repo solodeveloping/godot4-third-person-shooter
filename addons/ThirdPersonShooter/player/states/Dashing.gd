@@ -7,7 +7,8 @@ extends PlayerState
 func enter():
 	# set the dash vfx particle system to emitting
 	# this is a one-shot particle system so we don't have to worry about stopping it
-	player.vfx_dash.emitting = true
+	if player.vfx_dash:
+		player.vfx_dash.emitting = true
 
 	# start the player's dash timer to start the cooldown
 	player.dash_timer.start()

@@ -9,7 +9,8 @@ extends PlayerState
 func enter():
 	# set the surge vfx particle system to emitting
 	# this is a one-shot particle system so we don't have to worry about stopping it
-	player.vfx_surge.emitting = true
+	if player.vfx_surge:
+		player.vfx_surge.emitting = true
 
 	player.anim_tree.set("parameters/Surging/blend_position", 1)
 
