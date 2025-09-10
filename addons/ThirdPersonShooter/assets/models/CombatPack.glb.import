@@ -35,7 +35,7 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:Armature/Skeleton3D": {
-"retarget/bone_map": Resource("res://assets/Mixamo BoneMap.tres")
+"retarget/bone_map": Resource("res://addons/ThirdPersonShooter/assets/Mixamo BoneMap.tres")
 }
 }
 }
